@@ -1,0 +1,183 @@
+/**
+ * W3rise Studio - Base Typography & Editorial Hierarchy
+ * Editorial headlines, fluid responsive scales, and typographic contrast
+ */
+
+/* ==========================================================================
+   Editorial Heading Hierarchy
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  color: var(--color-chocopie);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.heading-hero {
+  font-family: var(--font-display);
+  font-size: var(--font-size-hero);
+  font-weight: var(--weight-extrabold);
+  line-height: 1.02;
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-chocopie);
+}
+
+h1,
+.heading-1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-tighter);
+}
+
+h2,
+.heading-2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3,
+.heading-3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-snug);
+}
+
+h4,
+.heading-4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+h5,
+.heading-5 {
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-normal);
+}
+
+h6,
+.heading-6 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+}
+
+/* ==========================================================================
+   Editorial Eyebrow / Overline
+   ========================================================================== */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-secondary-on-light);
+}
+
+.eyebrow-accent {
+  color: var(--color-chocopie);
+  background: var(--color-butter);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.eyebrow-on-dark {
+  color: var(--color-blue);
+}
+
+/* ==========================================================================
+   Body Copy & Paragraph Scales
+   ========================================================================== */
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-secondary-on-light);
+  font-weight: var(--weight-regular);
+}
+
+.text-lead {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-snug);
+  color: var(--text-primary-on-light);
+  font-weight: var(--weight-medium);
+}
+
+.text-subtle {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary-on-light);
+  line-height: var(--line-height-base);
+}
+
+.text-caption {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary-on-light);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ==========================================================================
+   Editorial Accents & Butter Highlights
+   ========================================================================== */
+.highlight-butter {
+  background: linear-gradient(120deg, transparent 0%, rgba(var(--color-butter-rgb), 0.9) 15%, rgba(var(--color-butter-rgb), 0.9) 85%, transparent 100%);
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  color: var(--color-chocopie);
+  padding: 0 0.15em;
+}
+
+.highlight-butter-box {
+  background-color: var(--color-butter);
+  color: var(--color-chocopie);
+  padding: 0.15em 0.5em;
+  border-radius: var(--radius-xs);
+  font-weight: var(--weight-semibold);
+}
+
+/* Monospace & Code */
+code,
+pre,
+.font-mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Text on Dark Backgrounds (Chocopie Sections) */
+.dark-theme,
+[data-theme="dark"],
+.bg-chocopie {
+  color: var(--text-primary-on-dark);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6,
+.bg-chocopie h1,
+.bg-chocopie h2,
+.bg-chocopie h3,
+.bg-chocopie h4,
+.bg-chocopie h5,
+.bg-chocopie h6 {
+  color: var(--text-primary-on-dark);
+}
+
+.dark-theme p,
+.bg-chocopie p {
+  color: var(--text-secondary-on-dark);
+}
