@@ -1,0 +1,327 @@
+/**
+ * W3rise Studio - Sophisticated Footer & Interaction Polish
+ * Deep Chocopie (#432f2e) grounding base with crisp light text,
+ * atmospheric Blue (#c4dae8) links, and Butter (#feefb8) highlights.
+ */
+
+.site-footer {
+  position: relative;
+  background-color: var(--color-chocopie);
+  color: var(--text-primary-on-dark);
+  border-top: 1px solid rgba(var(--color-blue-rgb), 0.18);
+  padding-top: clamp(var(--space-16), 8vw, var(--space-24));
+  padding-bottom: var(--space-12);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Subtle Ambient Lighting within Footer Canvas */
+.footer-ambient-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.footer-orb-blue {
+  position: absolute;
+  top: -20%;
+  right: -5%;
+  width: clamp(350px, 45vw, 650px);
+  height: clamp(350px, 45vw, 650px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--color-blue-rgb), 0.14) 0%,
+    rgba(var(--color-blue-rgb), 0.04) 50%,
+    transparent 75%
+  );
+  filter: blur(65px);
+}
+
+.footer-orb-butter {
+  position: absolute;
+  bottom: -15%;
+  left: 5%;
+  width: clamp(280px, 35vw, 550px);
+  height: clamp(280px, 35vw, 550px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--color-butter-rgb), 0.1) 0%,
+    rgba(var(--color-butter-rgb), 0.02) 50%,
+    transparent 75%
+  );
+  filter: blur(60px);
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Footer Main Editorial Grid
+   ========================================================================== */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 992px) {
+  .footer-main-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+    gap: var(--space-8);
+  }
+}
+
+/* Brand Column */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer-logo-link {
+  display: inline-block;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-logo-link:hover {
+  opacity: 0.85;
+}
+
+.footer-motto {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-height-snug);
+  color: #ffffff;
+  max-width: 360px;
+}
+
+.footer-motto-highlight {
+  color: var(--color-butter);
+}
+
+.footer-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-blue);
+  background-color: rgba(var(--color-blue-rgb), 0.12);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.25);
+  width: fit-content;
+}
+
+.footer-meta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-butter);
+  box-shadow: 0 0 8px var(--color-butter);
+}
+
+/* Column Headings */
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-butter);
+  margin-bottom: var(--space-6);
+}
+
+/* Navigation Lists */
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-link {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: rgba(var(--color-blue-rgb), 0.85);
+  text-decoration: none;
+  transition: color var(--transition-normal),
+              transform var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: fit-content;
+}
+
+.footer-link:hover {
+  color: var(--color-butter);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Newsletter Subscription Block
+   ========================================================================== */
+.footer-newsletter-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-newsletter-desc {
+  font-size: var(--font-size-sm);
+  color: rgba(var(--color-blue-rgb), 0.85);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-4);
+}
+
+.footer-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.newsletter-input-wrap {
+  display: flex;
+  position: relative;
+  background-color: rgba(var(--color-blue-rgb), 0.12);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.3);
+  border-radius: var(--radius-full);
+  padding: 0.3rem 0.3rem 0.3rem 1.25rem;
+  transition: border-color var(--transition-normal),
+              box-shadow var(--transition-normal),
+              background-color var(--transition-normal);
+}
+
+.newsletter-input-wrap:focus-within {
+  border-color: var(--color-butter);
+  background-color: rgba(var(--color-blue-rgb), 0.18);
+  box-shadow: 0 0 16px -2px rgba(var(--color-butter-rgb), 0.4);
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(var(--color-blue-rgb), 0.55);
+}
+
+.newsletter-submit-btn {
+  padding: 0.65rem 1.4rem;
+  background-color: var(--color-butter);
+  color: var(--color-chocopie);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-normal),
+              background-color var(--transition-normal),
+              box-shadow var(--transition-normal);
+  will-change: transform;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.newsletter-submit-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(var(--color-butter-rgb), 0.6);
+}
+
+.newsletter-submit-btn:active {
+  transform: translateY(0);
+}
+
+.newsletter-feedback {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  min-height: 1.25rem;
+  transition: opacity var(--transition-normal);
+}
+
+.newsletter-feedback.success {
+  color: var(--color-butter);
+}
+
+.newsletter-feedback.error {
+  color: #ff9999;
+}
+
+/* ==========================================================================
+   Footer Bottom Status & Copyright Bar
+   ========================================================================== */
+.footer-bottom-bar {
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(var(--color-blue-rgb), 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: rgba(var(--color-blue-rgb), 0.65);
+}
+
+.footer-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-blue);
+}
+
+.status-pulse-green {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #8ce99a;
+  box-shadow: 0 0 10px #8ce99a;
+}
+
+/* Back to Top Interactive Button */
+.btn-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.5rem 1rem;
+  background-color: rgba(var(--color-blue-rgb), 0.12);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.3);
+  color: var(--color-blue);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.btn-back-to-top:hover {
+  background-color: var(--color-butter);
+  border-color: var(--color-butter);
+  color: var(--color-chocopie);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(var(--color-butter-rgb), 0.5);
+}

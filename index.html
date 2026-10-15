@@ -644,20 +644,150 @@
         </section>
       </main>
 
-      <!-- Grounding Chocopie Footer Foundation -->
-      <footer class="bg-chocopie section" style="padding-block: var(--space-12); border-top: 1px solid rgba(var(--color-blue-rgb), 0.12);">
-        <div class="container flex-between" style="flex-wrap: wrap; gap: var(--space-6);">
-          <div>
-            <p class="font-mono text-caption" style="color: var(--color-blue); text-transform: uppercase; letter-spacing: var(--tracking-widest);">
-              W3rise Studio © 2026
-            </p>
-            <p class="text-caption" style="color: rgba(var(--color-blue-rgb), 0.65); margin-top: var(--space-1);">
-              Where Strategy, Design &amp; Code Converge
-            </p>
+      <!-- ====================================================================
+           5. Sophisticated Chocopie (#432f2e) Footer
+           Grounding base with crisp light text, social links, and newsletter dispatch
+           ==================================================================== -->
+      <footer id="contact" class="site-footer" role="contentinfo">
+        
+        <!-- Natural Atmospheric Canvas Layer -->
+        <div class="footer-ambient-canvas" aria-hidden="true">
+          <div class="footer-orb-blue"></div>
+          <div class="footer-orb-butter"></div>
+        </div>
+
+        <div class="container footer-container">
+          
+          <!-- Main Editorial Footer Columns -->
+          <div class="footer-main-grid">
+            
+            <!-- Column 1: Brand Identity & Motto -->
+            <div class="footer-brand-col">
+              <a href="#" class="footer-logo-link" aria-label="W3rise Studio Top">
+                <img src="/assets/logo.svg" alt="W3rise Studio" width="160" height="40" style="filter: brightness(0) invert(1);" />
+              </a>
+
+              <p class="footer-motto">
+                Where strategy, design, and code converge into 
+                <span class="footer-motto-highlight">complete digital mastery.</span>
+              </p>
+
+              <div class="footer-meta-pill">
+                <span class="footer-meta-dot" aria-hidden="true"></span>
+                <span>Geneva • New York • Munich • Tokyo</span>
+              </div>
+
+              <div>
+                <a href="mailto:hello@w3rise.studio" class="footer-link" style="color: var(--color-butter); font-family: var(--font-mono); font-size: var(--font-size-sm);">
+                  <span>hello@w3rise.studio</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 2: Studio Navigation -->
+            <div>
+              <div class="footer-col-title">Studio</div>
+              <ul class="footer-links-list">
+                <li><a href="#services" class="footer-link">Capabilities</a></li>
+                <li><a href="#works" class="footer-link">Selected Works</a></li>
+                <li><a href="#services" class="footer-link">Approach</a></li>
+                <li><a href="#contact" class="footer-link">Initiate Project</a></li>
+                <li>
+                  <a href="#contact" class="footer-link">
+                    <span>Careers</span>
+                    <span class="badge-butter" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">Hiring</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Disciplines -->
+            <div>
+              <div class="footer-col-title">Disciplines</div>
+              <ul class="footer-links-list">
+                <li><a href="#services" class="footer-link">Brand Architecture</a></li>
+                <li><a href="#services" class="footer-link">Full-Stack Craft</a></li>
+                <li><a href="#services" class="footer-link">Creative Direction</a></li>
+                <li><a href="#services" class="footer-link">WebGL &amp; 3D Labs</a></li>
+                <li><a href="#works" class="footer-link">Performance Audits</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 4: Newsletter & Social Networks -->
+            <div class="footer-newsletter-col">
+              <div class="footer-col-title">Studio Dispatch</div>
+              <p class="footer-newsletter-desc">
+                Curated quarterly dispatches on design systems, spatial computing, and scalable software architecture.
+              </p>
+
+              <!-- Newsletter Form -->
+              <form id="newsletter-form" class="footer-newsletter-form" novalidate>
+                <div class="newsletter-input-wrap">
+                  <label for="newsletter-email" class="sr-only">Corporate email address</label>
+                  <input 
+                    type="email" 
+                    id="newsletter-email" 
+                    name="email" 
+                    class="newsletter-input" 
+                    placeholder="Enter corporate email..." 
+                    required 
+                    autocomplete="email"
+                  />
+                  <button type="submit" class="newsletter-submit-btn">
+                    <span>Join</span>
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
+                <div id="newsletter-feedback" class="newsletter-feedback" role="status" aria-live="polite"></div>
+              </form>
+
+              <!-- Social Links -->
+              <div style="margin-top: var(--space-6);">
+                <div class="footer-col-title" style="margin-bottom: var(--space-3); font-size: 0.7rem;">Connect</div>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
+                  <a href="https://github.com/tamutswamatondoo/w3rise_studio" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="GitHub Profile">
+                    <span>GitHub</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="footer-link" aria-label="X Twitter Profile">
+                    <span>X (Twitter)</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="footer-link" aria-label="LinkedIn Profile">
+                    <span>LinkedIn</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="footer-link" aria-label="Are.na Channel">
+                    <span>Are.na</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
           </div>
-          <p class="text-caption" style="color: var(--color-butter);">
-            Phase 2 • Hero Section &amp; Natural Atmospheric Flow
-          </p>
+
+          <!-- Bottom Status & Copyright Bar -->
+          <div class="footer-bottom-bar">
+            <div class="footer-copyright">
+              © 2026 W3rise Studio. All rights reserved. Strict natural spatial hierarchy.
+            </div>
+
+            <div class="footer-status-indicator">
+              <span class="status-pulse-green" aria-hidden="true"></span>
+              <span>100% Green Cloud Hosted • Global Edge Delivery</span>
+            </div>
+
+            <div>
+              <button type="button" id="back-to-top-btn" class="btn-back-to-top" aria-label="Scroll back to top of page">
+                <span>Back to Top</span>
+                <span aria-hidden="true">↑</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </footer>
     </div>

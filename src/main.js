@@ -1,6 +1,6 @@
 /**
  * W3rise Studio - Application Entry Point
- * Phase 3: Navigation, Hero, and Multi-Disciplinary Grid Filtering
+ * Phase 5: Navigation, Hero, Filterable Works, Modular Services, and Footer Interactions
  */
 
 import '../styles/main.css';
@@ -153,6 +153,54 @@ export function initWorksFilter() {
   });
 }
 
+/**
+ * Newsletter Form Submission Handling
+ */
+export function initNewsletterForm() {
+  const form = document.querySelector('#newsletter-form');
+  const input = document.querySelector('#newsletter-email');
+  const feedback = document.querySelector('#newsletter-feedback');
+
+  if (!form || !input || !feedback) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = input.value.trim();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      feedback.textContent = 'Please enter a valid email address.';
+      feedback.className = 'newsletter-feedback error';
+      input.focus();
+      return;
+    }
+
+    // Success State
+    feedback.textContent = '✓ Subscribed to W3rise Studio Dispatch. Welcome.';
+    feedback.className = 'newsletter-feedback success';
+    input.value = '';
+
+    setTimeout(() => {
+      feedback.textContent = '';
+      feedback.className = 'newsletter-feedback';
+    }, 6000);
+  });
+}
+
+/**
+ * Back to Top Smooth Scroll
+ */
+export function initBackToTop() {
+  const btn = document.querySelector('#back-to-top-btn');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   const tokenCheck = verifyDesignTokens();
@@ -163,4 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initMobileNav();
   initWorksFilter();
+  initNewsletterForm();
+  initBackToTop();
 });
