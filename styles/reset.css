@@ -43,8 +43,8 @@ body {
   min-height: 100dvh;
   line-height: var(--line-height-base);
   font-family: var(--font-body);
-  color: var(--text-primary-on-light);
-  background-color: var(--color-offwhite);
+  color: #ffffff;
+  background-color: var(--color-chocopie-deep);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

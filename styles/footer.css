@@ -6,9 +6,9 @@
 
 .site-footer {
   position: relative;
-  background-color: var(--color-chocopie);
+  background-color: var(--color-chocopie-deep);
   color: var(--text-primary-on-dark);
-  border-top: 1px solid rgba(var(--color-blue-rgb), 0.18);
+  border-top: 1px solid rgba(var(--color-blue-rgb), 0.14);
   padding-top: clamp(var(--space-16), 8vw, var(--space-24));
   padding-bottom: var(--space-12);
   overflow: hidden;

@@ -1,6 +1,6 @@
 /**
  * W3rise Studio - Base Typography & Editorial Hierarchy
- * Editorial headlines, fluid responsive scales, and typographic contrast
+ * High-contrast editorial display, crisp typography, and luminous Butter accents
  */
 
 /* ==========================================================================
@@ -14,7 +14,7 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
-  color: var(--color-chocopie);
+  color: #ffffff;
   line-height: var(--line-height-tight);
   letter-spacing: var(--tracking-tight);
 }
@@ -23,9 +23,9 @@ h6 {
   font-family: var(--font-display);
   font-size: var(--font-size-hero);
   font-weight: var(--weight-extrabold);
-  line-height: 1.02;
+  line-height: 1.04;
   letter-spacing: var(--tracking-tighter);
-  color: var(--color-chocopie);
+  color: #ffffff;
 }
 
 h1,
@@ -60,70 +60,71 @@ h5,
 .heading-5 {
   font-size: var(--font-size-md);
   font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-normal);
 }
 
 h6,
 .heading-6 {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--weight-semibold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);
 }
 
 /* ==========================================================================
-   Editorial Eyebrow / Overline
+   Editorial Eyebrow / Overlines
    ========================================================================== */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.72rem;
   font-weight: var(--weight-semibold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);
-  color: var(--text-secondary-on-light);
-}
-
-.eyebrow-accent {
-  color: var(--color-chocopie);
-  background: var(--color-butter);
-  padding: 0.2rem 0.65rem;
-  border-radius: var(--radius-full);
-}
-
-.eyebrow-on-dark {
   color: var(--color-blue);
 }
 
+.eyebrow-accent {
+  color: var(--color-chocopie-deep);
+  background-color: var(--color-butter);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+}
+
+.eyebrow-on-dark {
+  color: var(--color-butter);
+}
+
 /* ==========================================================================
-   Body Copy & Paragraph Scales
+   Body Copy & Paragraph Scales (High Contrast & Legibility)
    ========================================================================== */
 p {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--text-secondary-on-light);
+  color: rgba(var(--color-blue-rgb), 0.85);
   font-weight: var(--weight-regular);
 }
 
 .text-lead {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-snug);
-  color: var(--text-primary-on-light);
+  color: #ffffff;
   font-weight: var(--weight-medium);
 }
 
 .text-subtle {
   font-size: var(--font-size-sm);
-  color: var(--text-tertiary-on-light);
+  color: rgba(var(--color-blue-rgb), 0.7);
   line-height: var(--line-height-base);
 }
 
 .text-caption {
   font-size: var(--font-size-xs);
-  color: var(--text-tertiary-on-light);
+  color: rgba(var(--color-blue-rgb), 0.6);
   letter-spacing: var(--tracking-wide);
 }
 
@@ -131,20 +132,18 @@ p {
    Editorial Accents & Butter Highlights
    ========================================================================== */
 .highlight-butter {
-  background: linear-gradient(120deg, transparent 0%, rgba(var(--color-butter-rgb), 0.9) 15%, rgba(var(--color-butter-rgb), 0.9) 85%, transparent 100%);
-  background-size: 100% 40%;
-  background-repeat: no-repeat;
-  background-position: 0 88%;
-  color: var(--color-chocopie);
-  padding: 0 0.15em;
+  color: var(--color-butter);
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(var(--color-butter-rgb), 0.3);
 }
 
 .highlight-butter-box {
   background-color: var(--color-butter);
-  color: var(--color-chocopie);
+  color: var(--color-chocopie-deep);
   padding: 0.15em 0.5em;
   border-radius: var(--radius-xs);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-bold);
 }
 
 /* Monospace & Code */
@@ -152,32 +151,10 @@ code,
 pre,
 .font-mono {
   font-family: var(--font-mono);
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
-/* Text on Dark Backgrounds (Chocopie Sections) */
-.dark-theme,
-[data-theme="dark"],
-.bg-chocopie {
-  color: var(--text-primary-on-dark);
-}
-
-.dark-theme h1,
-.dark-theme h2,
-.dark-theme h3,
-.dark-theme h4,
-.dark-theme h5,
-.dark-theme h6,
-.bg-chocopie h1,
-.bg-chocopie h2,
-.bg-chocopie h3,
-.bg-chocopie h4,
-.bg-chocopie h5,
-.bg-chocopie h6 {
-  color: var(--text-primary-on-dark);
-}
-
-.dark-theme p,
-.bg-chocopie p {
-  color: var(--text-secondary-on-dark);
+/* Inverted Text on Light/Butter Highlights */
+.text-dark {
+  color: var(--color-chocopie-deep) !important;
 }
