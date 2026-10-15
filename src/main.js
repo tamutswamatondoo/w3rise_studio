@@ -1,6 +1,6 @@
 /**
  * W3rise Studio - Application Entry Point
- * Phase 2: Navigation & Hero Atmospheric Interactions
+ * Phase 3: Navigation, Hero, and Multi-Disciplinary Grid Filtering
  */
 
 import '../styles/main.css';
@@ -73,10 +73,8 @@ export function initMobileNav() {
     const iconPath = toggleBtn.querySelector('path');
     if (iconPath) {
       if (isOpen) {
-        // Cross / Close icon
         iconPath.setAttribute('d', 'M6 6L18 18M6 18L18 6');
       } else {
-        // Hamburger icon
         iconPath.setAttribute('d', 'M3 6h18M3 12h18M3 18h18');
       }
     }
@@ -95,6 +93,66 @@ export function initMobileNav() {
   });
 }
 
+/**
+ * Interactive category filtering for Featured Works Grid
+ * Pills: All, Branding, Digital Experience, Strategy, Engineering
+ */
+export function initWorksFilter() {
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const workItems = document.querySelectorAll('.works-item');
+
+  if (!filterPills.length || !workItems.length) return;
+
+  // Dynamically compute and populate counts on category pills
+  filterPills.forEach(pill => {
+    const filter = (pill.dataset.filter || 'all').toLowerCase();
+    const countSpan = pill.querySelector('.filter-count');
+    if (!countSpan) return;
+
+    if (filter === 'all') {
+      countSpan.textContent = String(workItems.length);
+    } else {
+      const matchCount = Array.from(workItems).filter(item => {
+        const categories = (item.dataset.category || '').toLowerCase().split(' ');
+        return categories.includes(filter);
+      }).length;
+      countSpan.textContent = String(matchCount);
+    }
+  });
+
+  // Filter click interaction with hardware-accelerated transitions
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = (pill.dataset.filter || 'all').toLowerCase();
+
+      filterPills.forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-pressed', 'false');
+      });
+      pill.classList.add('active');
+      pill.setAttribute('aria-pressed', 'true');
+
+      workItems.forEach(item => {
+        const categories = (item.dataset.category || '').toLowerCase().split(' ');
+        const isMatch = filter === 'all' || categories.includes(filter);
+
+        if (isMatch) {
+          item.classList.remove('hidden');
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(12px)';
+          requestAnimationFrame(() => {
+            item.style.transition = 'opacity 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo)';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          });
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   const tokenCheck = verifyDesignTokens();
@@ -104,4 +162,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initHeaderScroll();
   initMobileNav();
+  initWorksFilter();
 });
