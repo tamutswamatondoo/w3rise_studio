@@ -164,9 +164,227 @@
         </div>
       </section>
 
-      <!-- Main Anchor Hook for Subsequent Phases -->
+      <!-- Main Content Area -->
       <main id="main-content">
-        <!-- Subsequent phases: Works Grid, Services Cards, Contact, Footer -->
+        <!-- ====================================================================
+             3. Featured Works / Multi-Disciplinary Grid
+             Responsive masonry grid with interactive filter pills:
+             (All, Branding, Digital Experience, Strategy, Engineering)
+             ==================================================================== -->
+        <section id="works" class="works-section" aria-labelledby="works-heading">
+          <div class="container">
+            
+            <!-- Section Header -->
+            <div class="works-header-panel">
+              <div class="works-header-top">
+                <span class="eyebrow eyebrow-accent">Selected Works • 2025–2026</span>
+                <h2 id="works-heading" class="works-title">
+                  Architected for distinction. Engineered for dominance.
+                </h2>
+                <p class="works-lead">
+                  From global brand identity systems to high-throughput software architectures, explore how we converge strategy, bespoke design, and code into complete digital mastery.
+                </p>
+              </div>
+
+              <!-- Interactive Category Filter Navigation -->
+              <div class="works-filter-nav" role="toolbar" aria-label="Project category filters">
+                <button type="button" class="filter-pill active" data-filter="all" aria-pressed="true">
+                  <span>All Disciplines</span>
+                  <span class="filter-count">6</span>
+                </button>
+                <button type="button" class="filter-pill" data-filter="branding" aria-pressed="false">
+                  <span>Branding</span>
+                  <span class="filter-count">3</span>
+                </button>
+                <button type="button" class="filter-pill" data-filter="digital-experience" aria-pressed="false">
+                  <span>Digital Experience</span>
+                  <span class="filter-count">4</span>
+                </button>
+                <button type="button" class="filter-pill" data-filter="strategy" aria-pressed="false">
+                  <span>Strategy</span>
+                  <span class="filter-count">2</span>
+                </button>
+                <button type="button" class="filter-pill" data-filter="engineering" aria-pressed="false">
+                  <span>Engineering</span>
+                  <span class="filter-count">3</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Responsive Masonry Grid -->
+            <div class="works-grid" id="works-grid-container">
+              
+              <!-- Project 1: Kronos Horology -->
+              <article class="works-item" data-category="branding digital-experience" aria-label="Kronos Horology Project">
+                <div class="work-media-box">
+                  <span class="work-badge-pill">Branding &amp; 3D WebGL</span>
+                  <img src="/assets/works/kronos.svg" alt="Kronos Horology 3D Timepiece Configurator" class="work-media-art" loading="lazy" />
+                </div>
+                <div class="work-info-box">
+                  <div class="work-client-eyebrow">Haute Horlogerie • Geneva</div>
+                  <div class="work-header-row">
+                    <h3 class="work-title">Kronos Spatial Timepiece Atelier</h3>
+                    <div class="work-arrow-circle" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="work-description">
+                    Complete brand repositioning and custom WebGL 3D luxury configurator enabling real-time bespoke horology assembly with sub-30ms interaction feedback.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Brand Identity</span>
+                    <span class="work-tag">WebGL Shaders</span>
+                    <span class="work-tag">Design System</span>
+                    <span class="work-tag">Luxury E-Commerce</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 2: Aura Autonomous OS -->
+              <article class="works-item" data-category="engineering digital-experience" aria-label="Aura Autonomous OS Project">
+                <div class="work-media-box">
+                  <span class="work-badge-pill">Engineering &amp; Telemetry</span>
+                  <img src="/assets/works/aura.svg" alt="Aura OS Real-time Telemetry Platform" class="work-media-art" loading="lazy" />
+                </div>
+                <div class="work-info-box">
+                  <div class="work-client-eyebrow">Robotics &amp; Mobility • Munich</div>
+                  <div class="work-header-row">
+                    <h3 class="work-title">Aura Autonomous Telemetry Hub</h3>
+                    <div class="work-arrow-circle" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="work-description">
+                    High-throughput spatial dashboard rendering 250,000 live telemetry nodes per second via micro-frontends and binary WebSocket streams.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Distributed Systems</span>
+                    <span class="work-tag">Micro-Frontends</span>
+                    <span class="work-tag">Spatial UI</span>
+                    <span class="work-tag">Real-Time WebSockets</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 3: Nexus Global Capital -->
+              <article class="works-item" data-category="strategy engineering" aria-label="Nexus Global Capital Project">
+                <div class="work-media-box">
+                  <span class="work-badge-pill">Strategy &amp; FinTech</span>
+                  <img src="/assets/works/nexus.svg" alt="Nexus Global Algorithmic Portfolio Terminal" class="work-media-art" loading="lazy" />
+                </div>
+                <div class="work-info-box">
+                  <div class="work-client-eyebrow">Institutional Asset Management • New York</div>
+                  <div class="work-header-row">
+                    <h3 class="work-title">Nexus Quantitative Wealth Terminal</h3>
+                    <div class="work-arrow-circle" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="work-description">
+                    Full enterprise brand transformation paired with high-concurrency algorithmic asset allocation dashboards handling $4.2B in multi-market liquidity.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Brand Strategy</span>
+                    <span class="work-tag">Quantitative UI</span>
+                    <span class="work-tag">Cloud Infrastructure</span>
+                    <span class="work-tag">Zero-Trust Security</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 4: Solaris Kinetic Pavilion -->
+              <article class="works-item" data-category="branding digital-experience" aria-label="Solaris Kinetic Pavilion Project">
+                <div class="work-media-box">
+                  <span class="work-badge-pill">Immersive Spatial &amp; Identity</span>
+                  <img src="/assets/works/solaris.svg" alt="Solaris Kinetic Pavilion Generative Platform" class="work-media-art" loading="lazy" />
+                </div>
+                <div class="work-info-box">
+                  <div class="work-client-eyebrow">Biennale Architecture • Venice</div>
+                  <div class="work-header-row">
+                    <h3 class="work-title">Solaris Kinetic Spatial Pavilion</h3>
+                    <div class="work-arrow-circle" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="work-description">
+                    An architectural visual identity that manifests physically and digitally through live parametric shaders modulated by ambient sunlight telemetry.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Generative Visuals</span>
+                    <span class="work-tag">Creative Direction</span>
+                    <span class="work-tag">Interactive Audio-Visual</span>
+                    <span class="work-tag">GLSL Shaders</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 5: Synapse AI Developer Platform -->
+              <article class="works-item" data-category="engineering strategy" aria-label="Synapse AI Platform Project">
+                <div class="work-media-box">
+                  <span class="work-badge-pill">Developer Platform &amp; API</span>
+                  <img src="/assets/works/synapse.svg" alt="Synapse AI Platform Documentation and Console" class="work-media-art" loading="lazy" />
+                </div>
+                <div class="work-info-box">
+                  <div class="work-client-eyebrow">Frontier Intelligence • San Francisco</div>
+                  <div class="work-header-row">
+                    <h3 class="work-title">Synapse AI Developer Infrastructure</h3>
+                    <div class="work-arrow-circle" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="work-description">
+                    Developer portal, high-speed documentation engine, and interactive testing console for LLM inference networks with sub-50ms TTFT guarantees.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Developer Experience</span>
+                    <span class="work-tag">API Design</span>
+                    <span class="work-tag">Design System</span>
+                    <span class="work-tag">Edge Infrastructure</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 6: Valence Haute Couture -->
+              <article class="works-item" data-category="branding digital-experience" aria-label="Valence Haute Couture Project">
+                <div class="work-media-box">
+                  <span class="work-badge-pill">Editorial Commerce &amp; Motion</span>
+                  <img src="/assets/works/valence.svg" alt="Valence Luxury Digital Runway Flagship" class="work-media-art" loading="lazy" />
+                </div>
+                <div class="work-info-box">
+                  <div class="work-client-eyebrow">Luxury Fashion • Paris</div>
+                  <div class="work-header-row">
+                    <h3 class="work-title">Valence Digital Runway &amp; Atelier</h3>
+                    <div class="work-arrow-circle" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="work-description">
+                    Minimalist typographic universe paired with buttery micro-interactions, editorial lookbooks, and a headless commerce architecture achieving 100/100 Core Web Vitals.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Headless Commerce</span>
+                    <span class="work-tag">Editorial Direction</span>
+                    <span class="work-tag">Micro-Interactions</span>
+                    <span class="work-tag">Web Performance</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
       </main>
 
       <!-- Grounding Chocopie Footer Foundation -->

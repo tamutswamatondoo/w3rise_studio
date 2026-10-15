@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" fill="none">
+  <!-- Deep Chocopie Ground -->
+  <rect width="800" height="500" fill="#291c1b"/>
+  
+  <!-- Atmospheric Blue Layer -->
+  <circle cx="350" cy="250" r="240" fill="#c4dae8" fill-opacity="0.12" filter="blur(40px)"/>
+  
+  <!-- Neural Flow Paths -->
+  <g stroke="#c4dae8" stroke-width="1.4" stroke-opacity="0.35">
+    <path d="M120 180 C 260 120, 340 320, 520 200 S 680 260, 720 160"/>
+    <path d="M120 250 C 260 200, 340 380, 520 250 S 680 300, 720 240"/>
+    <path d="M120 320 C 260 280, 340 420, 520 310 S 680 340, 720 320"/>
+  </g>
+
+  <!-- Neural Tensor Core Points -->
+  <g fill="#feefb8">
+    <circle cx="260" cy="200" r="8"/>
+    <circle cx="340" cy="350" r="10"/>
+    <circle cx="520" cy="240" r="12"/>
+    <circle cx="640" cy="290" r="7"/>
+  </g>
+  <circle cx="520" cy="240" r="26" stroke="#feefb8" stroke-width="1.5" stroke-opacity="0.5"/>
+
+  <text x="40" y="60" font-family="'JetBrains Mono', monospace" font-size="12" fill="#c4dae8" letter-spacing="4" opacity="0.7">05 / INTELLIGENCE INFRASTRUCTURE</text>
+  <text x="40" y="445" font-family="'Syne', sans-serif" font-size="32" font-weight="800" fill="#ffffff" letter-spacing="-1">SYNAPSE AI LABS</text>
+  <text x="40" y="470" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#feefb8" letter-spacing="1">Sub-50ms Model Inference Engine &amp; Developer Platform</text>
+</svg>
