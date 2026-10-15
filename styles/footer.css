@@ -1,21 +1,23 @@
 /**
- * W3rise Studio - Sophisticated Footer & Interaction Polish
- * Deep Chocopie (#432f2e) grounding base with crisp light text,
- * atmospheric Blue (#c4dae8) links, and Butter (#feefb8) highlights.
+ * W3rise Studio - Sophisticated Footer
+ * Strict Brand Triad:
+ *   - Grounding Base: Chocopie (#432f2e)
+ *   - Atmospheric Links & Text: Blue (#c4dae8)
+ *   - Luminous Highlights: Butter (#feefb8)
  */
 
 .site-footer {
   position: relative;
-  background-color: var(--color-chocopie-deep);
-  color: var(--text-primary-on-dark);
-  border-top: 1px solid rgba(var(--color-blue-rgb), 0.14);
-  padding-top: clamp(var(--space-16), 8vw, var(--space-24));
-  padding-bottom: var(--space-12);
+  background-color: var(--color-chocopie);
+  color: #ffffff;
+  border-top: 1px solid rgba(var(--color-blue-rgb), 0.16);
+  padding-top: clamp(var(--space-12), 6vw, var(--space-20));
+  padding-bottom: var(--space-10);
   overflow: hidden;
   z-index: 1;
 }
 
-/* Subtle Ambient Lighting within Footer Canvas */
+/* Subtle Ambient Lighting */
 .footer-ambient-canvas {
   position: absolute;
   inset: 0;
@@ -33,7 +35,7 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(var(--color-blue-rgb), 0.14) 0%,
+    rgba(var(--color-blue-rgb), 0.16) 0%,
     rgba(var(--color-blue-rgb), 0.04) 50%,
     transparent 75%
   );
@@ -67,8 +69,8 @@
 .footer-main-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
-  margin-bottom: var(--space-16);
+  gap: var(--space-10);
+  margin-bottom: var(--space-12);
 }
 
 @media (min-width: 992px) {
@@ -82,7 +84,7 @@
 .footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-4);
 }
 
 .footer-logo-link {
@@ -96,11 +98,11 @@
 
 .footer-motto {
   font-family: var(--font-display);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-weight: var(--weight-semibold);
   line-height: var(--line-height-snug);
   color: #ffffff;
-  max-width: 360px;
+  max-width: 340px;
 }
 
 .footer-motto-highlight {
@@ -112,32 +114,32 @@
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.725rem;
   color: var(--color-blue);
   background-color: rgba(var(--color-blue-rgb), 0.12);
-  padding: 0.35rem 0.85rem;
+  padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   border: 1px solid rgba(var(--color-blue-rgb), 0.25);
   width: fit-content;
 }
 
 .footer-meta-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: var(--color-butter);
-  box-shadow: 0 0 8px var(--color-butter);
+  box-shadow: 0 0 6px var(--color-butter);
 }
 
 /* Column Headings */
 .footer-col-title {
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.7rem;
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
   color: var(--color-butter);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 /* Navigation Lists */
@@ -145,25 +147,25 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .footer-link {
   font-family: var(--font-body);
-  font-size: var(--font-size-sm);
-  color: rgba(var(--color-blue-rgb), 0.85);
+  font-size: 0.8125rem;
+  color: var(--color-blue);
   text-decoration: none;
-  transition: color var(--transition-normal),
-              transform var(--transition-normal);
+  transition: color var(--transition-fast),
+              transform var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 4px;
   width: fit-content;
 }
 
 .footer-link:hover {
   color: var(--color-butter);
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -175,34 +177,32 @@
 }
 
 .footer-newsletter-desc {
-  font-size: var(--font-size-sm);
-  color: rgba(var(--color-blue-rgb), 0.85);
+  font-size: 0.8125rem;
+  color: var(--color-blue);
   line-height: var(--line-height-base);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .footer-newsletter-form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .newsletter-input-wrap {
   display: flex;
   position: relative;
   background-color: rgba(var(--color-blue-rgb), 0.12);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.3);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.28);
   border-radius: var(--radius-full);
-  padding: 0.3rem 0.3rem 0.3rem 1.25rem;
-  transition: border-color var(--transition-normal),
-              box-shadow var(--transition-normal),
-              background-color var(--transition-normal);
+  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
 }
 
 .newsletter-input-wrap:focus-within {
   border-color: var(--color-butter);
-  background-color: rgba(var(--color-blue-rgb), 0.18);
-  box-shadow: 0 0 16px -2px rgba(var(--color-butter-rgb), 0.4);
+  box-shadow: 0 0 14px -2px rgba(var(--color-butter-rgb), 0.4);
 }
 
 .newsletter-input {
@@ -211,7 +211,7 @@
   border: none;
   color: #ffffff;
   font-family: var(--font-body);
-  font-size: var(--font-size-sm);
+  font-size: 0.8125rem;
   outline: none;
 }
 
@@ -220,40 +220,33 @@
 }
 
 .newsletter-submit-btn {
-  padding: 0.65rem 1.4rem;
+  padding: 0.55rem 1.25rem;
   background-color: var(--color-butter);
   color: var(--color-chocopie);
   font-family: var(--font-body);
-  font-size: var(--font-size-xs);
+  font-size: 0.725rem;
   font-weight: var(--weight-bold);
   letter-spacing: var(--tracking-wide);
   border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
-  transition: transform var(--transition-normal),
-              background-color var(--transition-normal),
-              box-shadow var(--transition-normal);
+  transition: transform var(--transition-fast),
+              background-color var(--transition-fast);
   will-change: transform;
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 4px;
 }
 
 .newsletter-submit-btn:hover {
   background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(var(--color-butter-rgb), 0.6);
-}
-
-.newsletter-submit-btn:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .newsletter-feedback {
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.725rem;
   min-height: 1.25rem;
-  transition: opacity var(--transition-normal);
 }
 
 .newsletter-feedback.success {
@@ -261,26 +254,28 @@
 }
 
 .newsletter-feedback.error {
-  color: #ff9999;
+  color: var(--color-butter);
+  opacity: 0.85;
 }
 
 /* ==========================================================================
    Footer Bottom Status & Copyright Bar
    ========================================================================== */
 .footer-bottom-bar {
-  padding-top: var(--space-8);
+  padding-top: var(--space-6);
   border-top: 1px solid rgba(var(--color-blue-rgb), 0.14);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-6);
+  gap: var(--space-4);
   flex-wrap: wrap;
 }
 
 .footer-copyright {
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  color: rgba(var(--color-blue-rgb), 0.65);
+  font-size: 0.7rem;
+  color: var(--color-blue);
+  opacity: 0.75;
 }
 
 .footer-status-indicator {
@@ -288,40 +283,39 @@
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.7rem;
   color: var(--color-blue);
 }
 
-.status-pulse-green {
-  width: 8px;
-  height: 8px;
+.status-pulse-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: #8ce99a;
-  box-shadow: 0 0 10px #8ce99a;
+  background-color: var(--color-butter);
+  box-shadow: 0 0 8px var(--color-butter);
 }
 
-/* Back to Top Interactive Button */
+/* Back to Top Button */
 .btn-back-to-top {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: 0.5rem 1rem;
+  gap: 4px;
+  padding: 0.4rem 0.85rem;
   background-color: rgba(var(--color-blue-rgb), 0.12);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.3);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.28);
   color: var(--color-blue);
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.7rem;
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all var(--transition-fast);
 }
 
 .btn-back-to-top:hover {
   background-color: var(--color-butter);
   border-color: var(--color-butter);
   color: var(--color-chocopie);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 16px rgba(var(--color-butter-rgb), 0.5);
+  transform: translateY(-2px);
 }

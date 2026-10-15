@@ -86,7 +86,7 @@ h6,
 }
 
 .eyebrow-accent {
-  color: var(--color-chocopie-deep);
+  color: var(--color-chocopie);
   background-color: var(--color-butter);
   padding: 0.2rem 0.65rem;
   border-radius: var(--radius-full);
@@ -140,7 +140,7 @@ p {
 
 .highlight-butter-box {
   background-color: var(--color-butter);
-  color: var(--color-chocopie-deep);
+  color: var(--color-chocopie);
   padding: 0.15em 0.5em;
   border-radius: var(--radius-xs);
   font-weight: var(--weight-bold);
@@ -156,5 +156,5 @@ pre,
 
 /* Inverted Text on Light/Butter Highlights */
 .text-dark {
-  color: var(--color-chocopie-deep) !important;
+  color: var(--color-chocopie) !important;
 }

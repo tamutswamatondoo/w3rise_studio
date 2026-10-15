@@ -21,7 +21,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-chocopie-deep);
+  background-color: var(--color-chocopie);
 }
 
 .container {
@@ -126,7 +126,7 @@
 /* Primary CTA: Chocopie base with warm Butter hover & glow */
 .btn-primary {
   background-color: var(--color-butter);
-  color: var(--color-chocopie-deep);
+  color: var(--color-chocopie);
   border: 1px solid var(--color-butter);
 }
 

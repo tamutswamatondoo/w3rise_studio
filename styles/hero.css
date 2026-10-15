@@ -1,7 +1,9 @@
 /**
  * W3rise Studio - Hero Section & Natural Atmospheric Flow
- * Deep Chocopie ground (#1e1313) with layered atmospheric Blue (#c4dae8) canvas
- * and luminous Butter (#feefb8) highlights.
+ * Strict Brand Triad:
+ *   - Grounding Base: Chocopie (#432f2e)
+ *   - Atmospheric Canvas: Blue (#c4dae8)
+ *   - Luminous Accent: Butter (#feefb8)
  */
 
 .hero-section {
@@ -10,7 +12,7 @@
   min-height: 92dvh;
   display: flex;
   align-items: center;
-  background-color: var(--color-chocopie-deep);
+  background-color: var(--color-chocopie);
   color: #ffffff;
   padding-top: calc(5.5rem + var(--space-8));
   padding-bottom: var(--space-16);
@@ -37,8 +39,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(var(--color-blue-rgb), 0.16) 0%,
-    rgba(var(--color-blue-rgb), 0.05) 50%,
+    rgba(var(--color-blue-rgb), 0.22) 0%,
+    rgba(var(--color-blue-rgb), 0.06) 50%,
     transparent 75%
   );
   filter: blur(75px);
@@ -54,8 +56,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(var(--color-butter-rgb), 0.08) 0%,
-    rgba(var(--color-butter-rgb), 0.02) 50%,
+    rgba(var(--color-butter-rgb), 0.12) 0%,
+    rgba(var(--color-butter-rgb), 0.03) 50%,
     transparent 75%
   );
   filter: blur(80px);
@@ -67,8 +69,8 @@
   inset: 0;
   background-size: 56px 56px;
   background-image: 
-    linear-gradient(to right, rgba(var(--color-blue-rgb), 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(var(--color-blue-rgb), 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(var(--color-blue-rgb), 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--color-blue-rgb), 0.04) 1px, transparent 1px);
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 50%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 50%, transparent 100%);
   opacity: 0.7;
@@ -93,8 +95,8 @@
   align-items: center;
   gap: var(--space-2);
   padding: 0.35rem 0.95rem;
-  background-color: rgba(var(--color-blue-rgb), 0.08);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.2);
+  background-color: rgba(var(--color-blue-rgb), 0.12);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.28);
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: 0.725rem;
@@ -128,20 +130,20 @@
   color: var(--color-butter);
   position: relative;
   display: inline-block;
-  text-shadow: 0 0 24px rgba(var(--color-butter-rgb), 0.25);
+  text-shadow: 0 0 24px rgba(var(--color-butter-rgb), 0.35);
 }
 
 .hero-description {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   line-height: var(--line-height-relaxed);
-  color: rgba(var(--color-blue-rgb), 0.85);
+  color: var(--color-blue);
   max-width: 680px;
   margin-bottom: var(--space-8);
 }
 
 /* ==========================================================================
-   Hero Actions (Sleek Compact Proportions)
+   Hero Actions
    ========================================================================== */
 .hero-actions {
   display: flex;
@@ -156,10 +158,10 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  height: 2.85rem; /* 45px sleek */
+  height: 2.85rem;
   padding-inline: 1.65rem;
   background-color: var(--color-butter);
-  color: var(--color-chocopie-deep);
+  color: var(--color-chocopie);
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--weight-bold);
@@ -198,14 +200,14 @@
   gap: var(--space-2);
   height: 2.85rem;
   padding-inline: 1.5rem;
-  background-color: rgba(var(--color-blue-rgb), 0.08);
+  background-color: rgba(var(--color-blue-rgb), 0.1);
   color: var(--color-blue);
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   border-radius: var(--radius-full);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.28);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.35);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all var(--transition-fast);
@@ -213,7 +215,7 @@
 }
 
 .btn-hero-secondary:hover {
-  background-color: rgba(var(--color-blue-rgb), 0.18);
+  background-color: rgba(var(--color-blue-rgb), 0.2);
   border-color: var(--color-blue);
   color: #ffffff;
   transform: translateY(-2px);
@@ -224,7 +226,7 @@
    ========================================================================== */
 .hero-capabilities {
   padding-top: var(--space-6);
-  border-top: 1px solid rgba(var(--color-blue-rgb), 0.12);
+  border-top: 1px solid rgba(var(--color-blue-rgb), 0.16);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -233,7 +235,7 @@
 .hero-capabilities-label {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: rgba(var(--color-blue-rgb), 0.55);
+  color: rgba(var(--color-blue-rgb), 0.65);
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);
 }
@@ -253,8 +255,8 @@
 
 .capability-card {
   padding: var(--space-3) var(--space-4);
-  background-color: rgba(var(--color-blue-rgb), 0.04);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.1);
+  background-color: rgba(var(--color-blue-rgb), 0.07);
+  border: 1px solid rgba(var(--color-blue-rgb), 0.16);
   border-radius: var(--radius-md);
   transition: transform var(--transition-fast),
               background-color var(--transition-fast),
@@ -263,8 +265,8 @@
 
 .capability-card:hover {
   transform: translateY(-2px);
-  background-color: rgba(var(--color-blue-rgb), 0.08);
-  border-color: rgba(var(--color-butter-rgb), 0.4);
+  background-color: rgba(var(--color-blue-rgb), 0.14);
+  border-color: var(--color-butter);
 }
 
 .capability-number {
@@ -283,7 +285,7 @@
 
 .capability-desc {
   font-size: 0.725rem;
-  color: rgba(var(--color-blue-rgb), 0.65);
+  color: rgba(var(--color-blue-rgb), 0.75);
   margin-top: 2px;
   line-height: 1.35;
 }
