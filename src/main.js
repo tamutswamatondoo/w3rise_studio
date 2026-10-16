@@ -1,216 +1,164 @@
 /**
- * W3rise Studio - Application Entry Point
- * Phase 5: Navigation, Hero, Filterable Works, Modular Services, and Footer Interactions
+ * w3rise Studio — home page entry point
  */
 
-import '../styles/main.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/home.css';
 
-console.info(
-  '%c W3RISE STUDIO %c Complete Digital Mastery ',
-  'background: #432f2e; color: #feefb8; font-weight: bold; padding: 4px 8px; border-radius: 4px;',
-  'background: #c4dae8; color: #432f2e; font-weight: 500; padding: 4px 8px; border-radius: 4px;'
-);
+import { initShared } from './shared.js';
 
-/**
- * Validates that core design tokens are loaded properly on the document root
- */
-export function verifyDesignTokens() {
-  const rootStyles = getComputedStyle(document.documentElement);
-  const chocopie = rootStyles.getPropertyValue('--color-chocopie').trim();
-  const blue = rootStyles.getPropertyValue('--color-blue').trim();
-  const butter = rootStyles.getPropertyValue('--color-butter').trim();
+/* ==========================================================================
+   Selected work — filtering + cursor-following preview
+   ========================================================================== */
+export function initWorkLedger() {
+  const chips = Array.from(document.querySelectorAll('.chip[data-filter]'));
+  const items = Array.from(document.querySelectorAll('.ledger__item'));
+  const preview = document.querySelector('.work__preview');
+  const previewImg = preview?.querySelector('img');
+  if (!items.length) return;
 
-  const isVerified = (
-    chocopie.toLowerCase() === '#432f2e' &&
-    blue.toLowerCase() === '#c4dae8' &&
-    butter.toLowerCase() === '#feefb8'
-  );
+  /* ---- counts ---------------------------------------------------------- */
+  chips.forEach((chip) => {
+    const filter = (chip.dataset.filter || 'all').toLowerCase();
+    const count = chip.querySelector('[data-count]');
+    if (!count) return;
 
-  return {
-    verified: isVerified,
-    tokens: { chocopie, blue, butter }
-  };
-}
-
-/**
- * Header scroll state listener
- */
-export function initHeaderScroll() {
-  const header = document.querySelector('.site-header');
-  if (!header) return;
-
-  const handleScroll = () => {
-    if (window.scrollY > 24) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
-}
-
-/**
- * Mobile navigation drawer logic
- */
-export function initMobileNav() {
-  const toggleBtn = document.querySelector('.mobile-toggle');
-  const drawer = document.querySelector('.mobile-drawer');
-  const navLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer .nav-cta-pill');
-
-  if (!toggleBtn || !drawer) return;
-
-  const toggleMenu = (forceState) => {
-    const isOpen = typeof forceState === 'boolean' 
-      ? forceState 
-      : !drawer.classList.contains('open');
-
-    drawer.classList.toggle('open', isOpen);
-    toggleBtn.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-
-    const iconPath = toggleBtn.querySelector('path');
-    if (iconPath) {
-      if (isOpen) {
-        iconPath.setAttribute('d', 'M6 6L18 18M6 18L18 6');
-      } else {
-        iconPath.setAttribute('d', 'M3 6h18M3 12h18M3 18h18');
-      }
-    }
-  };
-
-  toggleBtn.addEventListener('click', () => toggleMenu());
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => toggleMenu(false));
+    count.textContent = String(
+      filter === 'all'
+        ? items.length
+        : items.filter((item) => matches(item, filter)).length
+    );
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer.classList.contains('open')) {
-      toggleMenu(false);
-    }
-  });
-}
+  /* ---- filtering ------------------------------------------------------- */
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const filter = (chip.dataset.filter || 'all').toLowerCase();
 
-/**
- * Interactive category filtering for Featured Works Grid
- * Pills: All, Branding, Digital Experience, Strategy, Engineering
- */
-export function initWorksFilter() {
-  const filterPills = document.querySelectorAll('.filter-pill');
-  const workItems = document.querySelectorAll('.works-item');
-
-  if (!filterPills.length || !workItems.length) return;
-
-  // Dynamically compute and populate counts on category pills
-  filterPills.forEach(pill => {
-    const filter = (pill.dataset.filter || 'all').toLowerCase();
-    const countSpan = pill.querySelector('.filter-count');
-    if (!countSpan) return;
-
-    if (filter === 'all') {
-      countSpan.textContent = String(workItems.length);
-    } else {
-      const matchCount = Array.from(workItems).filter(item => {
-        const categories = (item.dataset.category || '').toLowerCase().split(' ');
-        return categories.includes(filter);
-      }).length;
-      countSpan.textContent = String(matchCount);
-    }
-  });
-
-  // Filter click interaction with hardware-accelerated transitions
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const filter = (pill.dataset.filter || 'all').toLowerCase();
-
-      filterPills.forEach(p => {
-        p.classList.remove('active');
-        p.setAttribute('aria-pressed', 'false');
+      chips.forEach((c) => {
+        c.classList.remove('is-active');
+        c.setAttribute('aria-pressed', 'false');
       });
-      pill.classList.add('active');
-      pill.setAttribute('aria-pressed', 'true');
+      chip.classList.add('is-active');
+      chip.setAttribute('aria-pressed', 'true');
 
-      workItems.forEach(item => {
-        const categories = (item.dataset.category || '').toLowerCase().split(' ');
-        const isMatch = filter === 'all' || categories.includes(filter);
-
-        if (isMatch) {
-          item.classList.remove('hidden');
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(12px)';
-          requestAnimationFrame(() => {
-            item.style.transition = 'opacity 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo)';
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-          });
-        } else {
-          item.classList.add('hidden');
-        }
+      items.forEach((item) => {
+        item.classList.toggle('is-hidden', !matches(item, filter));
       });
+
+      hidePreview();
+    });
+  });
+
+  /* ---- cursor-following preview ---------------------------------------- */
+  const showPreview = (item) => {
+    if (!preview || !previewImg) return;
+    const thumb = item.querySelector('.ledger__thumb img');
+    if (!thumb) return;
+
+    previewImg.src = thumb.getAttribute('src');
+    previewImg.alt = thumb.getAttribute('alt') || '';
+    preview.classList.add('is-visible');
+  };
+
+  const movePreview = (event) => {
+    if (!preview) return;
+    preview.style.left = `${event.clientX}px`;
+    preview.style.top = `${event.clientY}px`;
+  };
+
+  items.forEach((item) => {
+    const link = item.querySelector('.ledger__link');
+    if (!link) return;
+
+    link.addEventListener('mouseenter', () => showPreview(item));
+    link.addEventListener('mousemove', movePreview);
+    link.addEventListener('mouseleave', hidePreview);
+    link.addEventListener('focus', () => showPreview(item));
+    link.addEventListener('blur', hidePreview);
+  });
+}
+
+function matches(item, filter) {
+  if (filter === 'all') return true;
+  const cats = (item.dataset.cats || '').toLowerCase().split(/\s+/);
+  return cats.includes(filter);
+}
+
+function hidePreview() {
+  document.querySelector('.work__preview')?.classList.remove('is-visible');
+}
+
+/* ==========================================================================
+   Capabilities accordion
+   ========================================================================== */
+export function initAccordion() {
+  const items = Array.from(document.querySelectorAll('.acc'));
+  if (!items.length) return;
+
+  const setOpen = (current, open) => {
+    current.classList.toggle('is-open', open);
+    current
+      .querySelector('.acc__head')
+      ?.setAttribute('aria-expanded', String(open));
+  };
+
+  items.forEach((item) => {
+    const head = item.querySelector('.acc__head');
+    if (!head) return;
+
+    if (item.classList.contains('is-open')) {
+      head.setAttribute('aria-expanded', 'true');
+    }
+
+    head.addEventListener('click', () => {
+      const willOpen = !item.classList.contains('is-open');
+      items.forEach((other) => setOpen(other, false));
+      setOpen(item, willOpen);
     });
   });
 }
 
-/**
- * Newsletter Form Submission Handling
- */
-export function initNewsletterForm() {
-  const form = document.querySelector('#newsletter-form');
-  const input = document.querySelector('#newsletter-email');
-  const feedback = document.querySelector('#newsletter-feedback');
+/* ==========================================================================
+   Contact form
+   ========================================================================== */
+export function initContactForm() {
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
 
-  if (!form || !input || !feedback) return;
+  const feedback = form.querySelector('.form-feedback');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = input.value.trim();
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!feedback) return;
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      feedback.textContent = 'Please enter a valid email address.';
-      feedback.className = 'newsletter-feedback error';
-      input.focus();
-      return;
-    }
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const message = String(data.get('message') || '').trim();
 
-    // Success State
-    feedback.textContent = '✓ Subscribed to W3rise Studio Dispatch. Welcome.';
-    feedback.className = 'newsletter-feedback success';
-    input.value = '';
+    const fail = (msg) => {
+      feedback.textContent = msg;
+      feedback.className = 'form-feedback is-error';
+    };
 
-    setTimeout(() => {
-      feedback.textContent = '';
-      feedback.className = 'newsletter-feedback';
-    }, 6000);
+    if (name.length < 2) return fail('Please add your name.');
+    if (!emailRe.test(email)) return fail('Please add a valid email address.');
+    if (message.length < 10) return fail('Tell us a little more about the project.');
+
+    feedback.textContent =
+      'Thanks — your brief is with us. We reply within one business day.';
+    feedback.className = 'form-feedback is-success';
+    form.reset();
   });
 }
 
-/**
- * Back to Top Smooth Scroll
- */
-export function initBackToTop() {
-  const btn = document.querySelector('#back-to-top-btn');
-  if (!btn) return;
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-}
-
-// Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  const tokenCheck = verifyDesignTokens();
-  if (tokenCheck.verified) {
-    document.documentElement.dataset.tokensReady = 'true';
-  }
-
-  initHeaderScroll();
-  initMobileNav();
-  initWorksFilter();
-  initNewsletterForm();
-  initBackToTop();
+  initShared();
+  initWorkLedger();
+  initAccordion();
+  initContactForm();
 });

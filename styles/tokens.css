@@ -1,149 +1,129 @@
 /**
- * W3rise Studio - Design Tokens & Custom Properties
- * Strict natural spatial hierarchy:
- *   --color-chocopie: #432f2e (Organic grounding base, footer, deep background sections, editorial headings)
- *   --color-blue:     #c4dae8 (Airy atmospheric canvas, secondary containers, section panels)
- *   --color-butter:   #feefb8 (Luminous accent tone, interactive highlights, active state indicators)
+ * w3rise Studio — Design Tokens
+ * ---------------------------------------------------------------------------
+ * An editorial, light-canvas system built strictly on the brand triad.
+ * Every tint below is an rgba() of a triad colour — no new hex values exist.
+ *
+ *   Chocopie  #432f2e  → ink, structure, rules, dark punctuation bands
+ *   Blue      #c4dae8  → the page canvas itself (airy, light, editorial)
+ *   Butter    #feefb8  → marker, highlight, active state, focus
  */
 
 :root {
-  /* ==========================================================================
-     Core Brand Color Palette
-     ========================================================================== */
-  --color-chocopie: #432f2e;
-  --color-chocopie-rgb: 67, 47, 46;
-
-  --color-blue: #c4dae8;
-  --color-blue-rgb: 196, 218, 232;
-
-  --color-butter: #feefb8;
-  --color-butter-rgb: 254, 239, 184;
-
-  /* Neutrals & Contrast Complements */
-  --color-white: #ffffff;
-  --color-offwhite: #faf8f5;
-  --color-cream: #f4eee3;
-  --color-dark-deep: #221616;
+  color-scheme: light;
 
   /* ==========================================================================
-     Semantic Hierarchy Tokens
+     Brand triad (locked)
      ========================================================================== */
-  /* Surfaces & Grounds */
-  --surface-ground: var(--color-chocopie);
-  --surface-ground-deep: var(--color-dark-deep);
-  --surface-canvas: var(--color-blue);
-  --surface-canvas-subtle: rgba(var(--color-blue-rgb), 0.16);
-  --surface-canvas-hover: rgba(var(--color-blue-rgb), 0.28);
-  --surface-card: #ffffff;
-  --surface-card-translucent: rgba(255, 255, 255, 0.85);
+  --chocopie: #432f2e;
+  --chocopie-rgb: 67, 47, 46;
 
-  /* Typography Roles */
-  --text-primary-on-light: var(--color-chocopie);
-  --text-secondary-on-light: rgba(var(--color-chocopie-rgb), 0.72);
-  --text-tertiary-on-light: rgba(var(--color-chocopie-rgb), 0.48);
+  --blue: #c4dae8;
+  --blue-rgb: 196, 218, 232;
 
-  --text-primary-on-dark: #fcfbfa;
-  --text-secondary-on-dark: rgba(var(--color-blue-rgb), 0.88);
-  --text-tertiary-on-dark: rgba(var(--color-blue-rgb), 0.60);
+  --butter: #feefb8;
+  --butter-rgb: 254, 239, 184;
 
-  /* Accents & States */
-  --accent-luminous: var(--color-butter);
-  --accent-luminous-rgb: var(--color-butter-rgb);
-  --accent-luminous-glow: rgba(var(--color-butter-rgb), 0.4);
-  --accent-luminous-subtle: rgba(var(--color-butter-rgb), 0.2);
-
-  /* Borders & Dividers */
-  --border-editorial: rgba(var(--color-chocopie-rgb), 0.14);
-  --border-editorial-subtle: rgba(var(--color-chocopie-rgb), 0.08);
-  --border-on-dark: rgba(var(--color-blue-rgb), 0.22);
-  --border-accent: rgba(var(--color-butter-rgb), 0.6);
+  --paper: #ffffff;
 
   /* ==========================================================================
-     Typography Stack & Scales
+     Roles — inverted hierarchy: Blue is the canvas, Chocopie is the ink
      ========================================================================== */
-  --font-display: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --canvas: var(--blue);
+  --ink: var(--chocopie);
+  --ink-soft: rgba(var(--chocopie-rgb), 0.68);
+  --ink-faint: rgba(var(--chocopie-rgb), 0.44);
 
-  /* Fluid Type Scale (Mobile-First via clamp) */
-  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
-  --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 0.9375rem);
-  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
-  --font-size-md: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
-  --font-size-lg: clamp(1.35rem, 1.2rem + 0.75vw, 1.625rem);
-  --font-size-xl: clamp(1.75rem, 1.5rem + 1.2vw, 2.25rem);
-  --font-size-2xl: clamp(2.25rem, 1.85rem + 2vw, 3.25rem);
-  --font-size-3xl: clamp(2.85rem, 2.2rem + 3.2vw, 4.5rem);
-  --font-size-hero: clamp(3.2rem, 2.4rem + 4.8vw, 6.25rem);
+  --marker: var(--butter);
+  --marker-ink: var(--chocopie);
 
-  /* Line Heights */
-  --line-height-tight: 1.08;
-  --line-height-snug: 1.25;
-  --line-height-base: 1.6;
-  --line-height-relaxed: 1.75;
+  --surface: rgba(255, 255, 255, 0.52);
+  --surface-strong: rgba(255, 255, 255, 0.84);
 
-  /* Letter Spacing */
-  --tracking-tighter: -0.04em;
+  --dark: var(--chocopie);
+  --on-dark: #ffffff;
+  --on-dark-soft: rgba(var(--blue-rgb), 0.8);
+  --on-dark-faint: rgba(var(--blue-rgb), 0.5);
+
+  --rule: rgba(var(--chocopie-rgb), 0.16);
+  --rule-strong: rgba(var(--chocopie-rgb), 0.34);
+  --rule-on-dark: rgba(var(--blue-rgb), 0.22);
+
+  --shadow-sm: 0 1px 2px rgba(var(--chocopie-rgb), 0.06),
+               0 8px 20px -12px rgba(var(--chocopie-rgb), 0.28);
+  --shadow-md: 0 2px 6px rgba(var(--chocopie-rgb), 0.07),
+               0 28px 60px -30px rgba(var(--chocopie-rgb), 0.55);
+
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --t-micro: 0.6875rem; /* 11px */
+  --t-xs: 0.75rem; /* 12px */
+  --t-sm: 0.8125rem; /* 13px */
+  --t-base: 0.9375rem; /* 15px */
+  --t-md: 1.0625rem; /* 17px */
+  --t-lg: clamp(1.2rem, 1rem + 0.85vw, 1.6rem);
+  --t-xl: clamp(1.6rem, 1.1rem + 1.7vw, 2.4rem);
+  --t-2xl: clamp(2.1rem, 1.1rem + 3.4vw, 3.6rem);
+  --t-3xl: clamp(2.6rem, 1rem + 5.6vw, 5.2rem);
+  --t-hero: clamp(2.9rem, 0.9rem + 7.4vw, 7rem);
+
+  --leading-tight: 1.02;
+  --leading-snug: 1.16;
+  --leading-base: 1.6;
+
   --tracking-tight: -0.02em;
-  --tracking-normal: 0em;
-  --tracking-wide: 0.04em;
-  --tracking-widest: 0.12em;
-
-  /* Font Weights */
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
-  --weight-extrabold: 800;
+  --tracking-tighter: -0.045em;
+  --tracking-wide: 0.08em;
+  --tracking-widest: 0.18em;
 
   /* ==========================================================================
-     Layout, Spacing & Container Constraints
+     Space, shell & rhythm
      ========================================================================== */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
-  --space-32: 8rem;     /* 128px */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-8: 2rem;
+  --s-10: 2.5rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+  --s-20: 5rem;
+  --s-24: 6rem;
 
-  --container-max-width: 1400px;
-  --container-padding: clamp(1.25rem, 3.5vw, 3.5rem);
-  --section-padding-y: clamp(4rem, 8vw, 8rem);
+  --shell: 1280px;
+  --gutter: clamp(1.25rem, 4vw, 3.25rem);
+  --section-y: clamp(4.5rem, 3rem + 8vw, 9rem);
+  --header-h: 4.25rem;
 
-  /* Border Radii */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
+  --r-xs: 3px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 26px;
+  --r-pill: 999px;
 
-  /* Organic Chocopie & Butter Shadows */
-  --shadow-subtle: 0 2px 8px rgba(var(--color-chocopie-rgb), 0.05);
-  --shadow-card: 0 10px 30px -10px rgba(var(--color-chocopie-rgb), 0.08);
-  --shadow-elevated: 0 20px 40px -15px rgba(var(--color-chocopie-rgb), 0.16);
-  --shadow-butter-glow: 0 0 24px rgba(var(--color-butter-rgb), 0.45);
-  --shadow-butter-ring: 0 0 0 3px rgba(var(--color-butter-rgb), 0.55);
+  /* ==========================================================================
+     Motion
+     ========================================================================== */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur: 320ms;
+  --dur-slow: 680ms;
 
-  /* Transitions & Hardware-Accelerated Curves */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
-  --transition-fast: 160ms var(--ease-out-expo);
-  --transition-normal: 280ms var(--ease-out-expo);
-  --transition-slow: 480ms var(--ease-out-expo);
-
-  /* Z-Index Hierarchy */
+  /* ==========================================================================
+     Stacking
+     ========================================================================== */
   --z-base: 1;
-  --z-nav: 100;
-  --z-dropdown: 200;
-  --z-modal-backdrop: 500;
-  --z-modal: 600;
-  --z-toast: 1000;
+  --z-preview: 20;
+  --z-header: 80;
+  --z-overlay: 90;
+  --z-progress: 95;
 }

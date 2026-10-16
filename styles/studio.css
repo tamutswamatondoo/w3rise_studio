@@ -1,0 +1,413 @@
+/**
+ * w3rise Studio — Studio page
+ * A dedicated, editorial deep-dive: story, principles, capability matrix,
+ * team, recognition and careers.
+ */
+
+/* ==========================================================================
+   1. Page hero
+   ========================================================================== */
+.studio-hero {
+  padding-top: clamp(2.5rem, 2rem + 4vw, 5rem);
+  padding-bottom: clamp(2.5rem, 2rem + 3vw, 4rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.studio-hero__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-8);
+}
+
+.crumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.crumbs a:hover {
+  color: var(--ink);
+}
+
+.studio-hero__title {
+  font-size: var(--t-hero);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tighter);
+  line-height: 0.98;
+  max-width: 22ch;
+  margin-bottom: var(--s-6);
+}
+
+.studio-hero__lede {
+  font-size: var(--t-md);
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin-bottom: var(--s-10);
+}
+
+.studio-hero__rail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--rule-strong);
+  border-left: 1px solid var(--rule);
+}
+
+@media (min-width: 860px) {
+  .studio-hero__rail {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.rail__cell {
+  padding: var(--s-5) var(--s-5) var(--s-5) 0;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-left: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.rail__cell dt {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.rail__cell dd {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* ==========================================================================
+   2. Principles — numbered editorial list
+   ========================================================================== */
+.principles {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.principle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-3);
+  padding-block: var(--s-6);
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 820px) {
+  .principle {
+    grid-template-columns: 4rem minmax(0, 0.9fr) minmax(0, 1.3fr);
+    gap: var(--s-8);
+    align-items: baseline;
+    padding-block: var(--s-8);
+  }
+}
+
+.principle__no {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+}
+
+.principle__title {
+  font-family: var(--font-display);
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+}
+
+.principle__text {
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   3. Story timeline
+   ========================================================================== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule-on-dark);
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-2);
+  padding-block: var(--s-6);
+  border-bottom: 1px solid var(--rule-on-dark);
+}
+
+@media (min-width: 760px) {
+  .milestone {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: var(--s-8);
+    align-items: baseline;
+    padding-block: var(--s-8);
+  }
+}
+
+.milestone__year {
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--butter);
+}
+
+.milestone__title {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  color: var(--on-dark);
+  margin-bottom: var(--s-2);
+}
+
+.milestone__text {
+  color: var(--on-dark-soft);
+  font-size: var(--t-sm);
+  max-width: 62ch;
+}
+
+/* ==========================================================================
+   4. Capability matrix
+   ========================================================================== */
+.matrix {
+  border-top: 1px solid var(--rule-strong);
+}
+
+.matrix__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-2);
+  padding-block: var(--s-6);
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 860px) {
+  .matrix__row {
+    grid-template-columns: 3rem minmax(0, 1.1fr) minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: baseline;
+  }
+}
+
+.matrix__no {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--ink-faint);
+}
+
+.matrix__discipline {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+.matrix__deliverables {
+  color: var(--ink-soft);
+  font-size: var(--t-sm);
+}
+
+.matrix__outcome {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--chocopie);
+}
+
+.matrix__outcome::before {
+  content: '→ ';
+  color: var(--ink-faint);
+}
+
+/* ==========================================================================
+   5. Team
+   ========================================================================== */
+.team {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: var(--rule-on-dark);
+  border: 1px solid var(--rule-on-dark);
+}
+
+@media (min-width: 760px) {
+  .team {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.member {
+  background-color: var(--dark);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.member__avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: var(--butter);
+  color: var(--chocopie);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: var(--tracking-tight);
+}
+
+.member__name {
+  font-family: var(--font-display);
+  font-size: var(--t-base);
+  font-weight: 700;
+  color: var(--on-dark);
+}
+
+.member__role {
+  font-size: var(--t-sm);
+  color: var(--on-dark-soft);
+}
+
+.member__where {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--on-dark-faint);
+}
+
+/* ==========================================================================
+   6. Recognition
+   ========================================================================== */
+.recognition {
+  border-top: 1px solid var(--rule-strong);
+}
+
+.award {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-1);
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 760px) {
+  .award {
+    grid-template-columns: 6rem minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: var(--s-6);
+    align-items: baseline;
+  }
+}
+
+.award__year {
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--ink-faint);
+}
+
+.award__title {
+  font-family: var(--font-display);
+  font-size: var(--t-base);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+.award__body {
+  font-size: var(--t-sm);
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   7. Careers
+   ========================================================================== */
+.roles {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule-on-dark);
+}
+
+.role {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-3);
+  padding-block: var(--s-6);
+  border-bottom: 1px solid var(--rule-on-dark);
+  align-items: center;
+}
+
+@media (min-width: 820px) {
+  .role {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr) 8rem 8rem;
+    gap: var(--s-6);
+  }
+}
+
+.role__title {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  color: var(--on-dark);
+}
+
+.role__meta {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--on-dark-faint);
+}
+
+.role__apply {
+  justify-self: start;
+}
+
+/* ==========================================================================
+   8. Studio closing CTA (canvas)
+   ========================================================================== */
+.next-up {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  padding-block: var(--s-10);
+}
+
+.next-up__label {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: var(--s-2);
+}
+
+.next-up__title {
+  font-family: var(--font-display);
+  font-size: var(--t-2xl);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-tight);
+  max-width: 20ch;
+}
