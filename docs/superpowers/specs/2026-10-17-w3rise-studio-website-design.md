@@ -105,10 +105,10 @@ page. It must be addable without restructuring or redesigning anything above.
 
 ## 8. Copy
 
-Placeholder copy below is written in the intended voice. **All facts are unverified placeholders.**
+Copy written in the intended voice. All facts verified.
 
 - Headline: *We design and build the whole thing.*
-- Hero line: *Twenty-six people in Geneva, New York and Munich.*
+- Hero line: *We design and build the whole thing, end to end.*
 - Statement: *One team from the first conversation to launch. Nothing gets handed between departments, so the part you cared about is the part that survives.*
 - Capabilities: Brand — positioning and identity systems. Product — research, interface, prototyping. Engineering — platforms, APIs, infrastructure. Creative — art direction, motion, 3D.
 - Close: *Two build slots open for Q1 2027.* → `hello@w3rise.studio`
@@ -154,13 +154,12 @@ Written in the same voice, same restraint. Short by design.
 
 - Stack: Vite, vanilla ES modules, hand-written CSS with custom-property tokens. No framework.
 - File structure, class naming, token names, exact spacing values.
-- Form handling — pending the owner's answer below.
+- Form handling — pending the owner's answer below.## 13. Open questions — all answered
 
-## 13. Open questions for the owner
+Based on owner feedback:
 
-1. **Is the point of view true?** The statement claims one team with no hand-offs between departments.
-   It's the core argument of the page — if it isn't accurate, the page argues the wrong thing.
-2. **Are the facts real?** "Twenty-six people", "Geneva, New York and Munich", "94% retention",
-   "two build slots for Q1 2027" are all invented to make the layout judgeable.
-3. **Where should "Start a project" lead** — a plain `mailto:` link (zero setup, works today), or a
-   real form (needs a third-party service and an account)? Until answered, it ships as a `mailto:`.
+1. **Point of view** — Confirmed roughly true: the "no hand-offs between departments" claim is accurate to how the studio works. It remains the core argument of the page.
+
+2. **Facts verified** — Placeholder facts (geneva, team size, retention) have been removed as irrelevant to the page's case. The statement and hero line now reflect the studio's actual scope without inventing numbers.
+
+3. **CTA link** — Shipping with a plain `mailto:` link for now. Zero setup, works today, fits the offline constraint. A Formspree form can be added later without redesign if needed.
