@@ -1,241 +1,318 @@
 /**
- * W3rise Studio - Master Stylesheet
- * Strict Natural Spatial Hierarchy & Performance Architecture
+ * W3rise Studio - Master Stylesheet (Redesign v3)
+ * Warm editorial, product-grade restraint.
+ * System fonts only. No web fonts. No decorative graphics.
  */
 
+/* CSS Tokens */
 @import './tokens.css';
 @import './reset.css';
 @import './typography.css';
-@import './header.css';
-@import './hero.css';
-@import './works.css';
-@import './services.css';
-@import './footer.css';
 
 /* ==========================================================================
-   Base Layout Primitives
+   Base & Canvas
    ========================================================================== */
-.site-wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-offwhite);
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-primary);
+  background-color: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Container — centered column */
 .container {
-  width: 100%;
   max-width: var(--container-max-width);
   margin-inline: auto;
-  padding-inline: var(--container-padding);
+  padding-inline: clamp(1rem, 3vw, 2rem);
 }
 
-.section {
+/* ==========================================================================
+   Skip link
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  inset: 0;
+  z-index: 9999;
+  background: var(--canvas);
+  padding: var(--space-3);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  transition: background-color var(--transition-fast);
+}
+
+.skip-link:focus-visible {
+  clip: rect(auto, auto, auto, auto);
+  clip-path: inset(0);
+  width: auto;
+  height: auto;
+  padding: var(--space-3);
+  background: var(--ink);
+  color: var(--canvas);
+  font-size: var(--font-size-sm);
+}
+
+/* ==========================================================================
+   Two hairline rules — above Capabilities and above Close
+   ========================================================================== */
+
+.rules {
   position: relative;
-  padding-block: var(--section-padding-y);
-  width: 100%;
+  padding-block: var(--space-6);
 }
+
+.rules::before,
+.rules::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--rule-hairline);
+  z-index: 1;
+}
+
+.rules::before { top: 0; }
+.rules::after { bottom: 0; }
+
+/* Only apply rules where needed (Capabilities and Close sections) */
+.section.capabilities .rules { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.section.close .rules { padding-top: var(--space-8); padding-bottom: var(--space-8); }
 
 /* ==========================================================================
-   Strict Natural Spatial Hierarchy Systems
+   Hero section
    ========================================================================== */
 
-/* 1. CHOCOPIE (#432f2e): Rich organic grounding base */
-.bg-chocopie {
-  background-color: var(--color-chocopie);
-  color: var(--text-primary-on-dark);
+.hero-section {
+  padding-block: clamp(8rem, 12vw, 16rem);
+  text-align: center;
 }
 
-.bg-chocopie-deep {
-  background-color: var(--surface-ground-deep);
-  color: var(--text-primary-on-dark);
-}
-
-/* 2. BLUE (#c4dae8): Airy atmospheric canvas & secondary container blocks */
-.bg-canvas-blue {
-  background-color: var(--color-blue);
-  color: var(--color-chocopie);
-}
-
-.bg-canvas-blue-subtle {
-  background-color: var(--surface-canvas-subtle);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.45);
-}
-
-.panel-blue {
-  background-color: rgba(var(--color-blue-rgb), 0.18);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.38);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* 3. BUTTER (#feefb8): Luminous accent tone, interactive highlights & glow */
-.accent-butter {
-  color: var(--color-butter);
-}
-
-.bg-butter {
-  background-color: var(--color-butter);
-  color: var(--color-chocopie);
-}
-
-.badge-butter {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0.35rem 0.85rem;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
   font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
-  background-color: var(--color-butter);
-  color: var(--color-chocopie);
-  border-radius: var(--radius-full);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  display: inline-block;
 }
 
-.glow-butter {
-  box-shadow: 0 0 24px -4px rgba(var(--color-butter-rgb), 0.55);
+.headline {
+  font-family: var(--font-display);
+  font-size: var(--font-size-headline);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  color: var(--ink);
+  margin: var(--space-4) 0 var(--space-6);
+  font-weight: 600;
 }
 
-/* ==========================================================================
-   Interactive Elements & Hardware-Accelerated Buttons
-   ========================================================================== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-3);
-  padding: 0.95rem 1.85rem;
+.hero-line {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  max-width: 48ch;
+  margin-inline: auto;
+}
+
+/* CTA button */
+.btn-primary {
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-wide);
+  background-color: var(--accent-terracotta);
+  color: var(--canvas);
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-full);
-  position: relative;
-  overflow: hidden;
-  will-change: transform, box-shadow, background-color;
-  transition: transform var(--transition-normal),
-              box-shadow var(--transition-normal),
-              background-color var(--transition-normal),
-              color var(--transition-normal);
-}
-
-/* Primary CTA: Chocopie base with warm Butter hover & glow */
-.btn-primary {
-  background-color: var(--color-chocopie);
-  color: #ffffff;
-  border: 1px solid var(--color-chocopie);
-}
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-butter);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  z-index: 0;
-}
-
-.btn-primary span,
-.btn-primary svg {
-  position: relative;
-  z-index: 1;
-  transition: color var(--transition-normal);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -6px rgba(var(--color-chocopie-rgb), 0.28),
-              0 0 20px 2px rgba(var(--color-butter-rgb), 0.45);
+  box-shadow: 0 12px 28px -6px rgba(var(--accent-rgb), 0.28), 0 0 20px 2px rgba(var(--accent-rgb), 0.45);
 }
 
-.btn-primary:hover::after {
-  opacity: 1;
-}
-
-.btn-primary:hover span,
-.btn-primary:hover svg {
-  color: var(--color-chocopie);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* Secondary CTA: Airy Atmospheric Blue Panel with Chocopie text */
-.btn-secondary {
-  background-color: rgba(var(--color-blue-rgb), 0.22);
-  color: var(--color-chocopie);
-  border: 1px solid rgba(var(--color-blue-rgb), 0.6);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-blue);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-subtle);
-}
-
-.btn-secondary:active {
-  transform: translateY(0);
-}
-
-/* Butter Interactive Pill */
-.btn-butter {
-  background-color: var(--color-butter);
-  color: var(--color-chocopie);
-  box-shadow: 0 4px 16px -2px rgba(var(--color-butter-rgb), 0.6);
-}
-
-.btn-butter:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 24px -2px rgba(var(--color-butter-rgb), 0.85);
+.btn-primary:focus-visible {
+  outline: 2px solid var(--canvas);
+  outline-offset: var(--space-2);
 }
 
 /* ==========================================================================
-   Responsive Grids & Utilities
+   Statement section
    ========================================================================== */
-.grid-masonry-preview {
+
+.statement-section {
+  padding-block: clamp(4rem, 8vw, 6rem);
+  text-align: center;
+}
+
+/* Tinted band wrapping the statement */
+.statement-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--band);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* The content sits inside the band */
+.statement-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Capabilities section
+   ========================================================================== */
+
+.capabilities-section {
+  padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-headline);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  color: var(--ink);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: var(--space-6);
+  gap: var(--space-8);
+  max-width: 660px;
+  margin-inline: auto;
 }
 
-@media (min-width: 640px) {
-  .grid-masonry-preview {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.capability-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: start;
 }
 
-@media (min-width: 1024px) {
-  .grid-masonry-preview {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.capability-discipline {
+  font-family: var(--font-display);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
 }
 
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.capability-description {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
+/* ==========================================================================
+   Close section
+   ========================================================================== */
+
+.close-section {
+  padding-block: clamp(4rem, 8vw, 6rem);
+  text-align: center;
+}
+
+.close-section .rules { top: 0; bottom: auto; }
+
+.close-section .availability {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  margin: var(--space-6) 0;
+}
+
+/* Contact bar */
+.contact-bar {
+  display: inline-flex;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
   justify-content: center;
 }
 
-/* Accessibility helper */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.contact-bar .btn-primary {
+  padding: var(--space-3) var(--space-6);
 }
+
+.contact-bar .btn-secondary {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule-hairline);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: color var(--transition-normal);
+}
+
+.contact-bar .btn-secondary:hover {
+  color: var(--accent-terracotta);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  padding-block: var(--space-6);
+  text-align: center;
+  color: var(--muted-ink);
+  font-size: var(--font-size-label);
+}
+
+/* ==========================================================================
+   Studio page (separate)
+   ========================================================================== */
+
+@media (min-width: 1px) {
+  .studio-hero .eyebrow { margin-bottom: var(--space-2); }
+  .studio-hero .headline { margin: var(--space-4) 0 var(--space-3); }
+  .studio-hero .lead { font-size: var(--font-size-small); color: var(--text-secondary); margin-bottom: var(--space-8); }
+}

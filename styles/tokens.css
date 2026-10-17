@@ -1,149 +1,75 @@
 /**
- * W3rise Studio - Design Tokens & Custom Properties
- * Strict natural spatial hierarchy:
- *   --color-chocopie: #432f2e (Organic grounding base, footer, deep background sections, editorial headings)
- *   --color-blue:     #c4dae8 (Airy atmospheric canvas, secondary containers, section panels)
- *   --color-butter:   #feefb8 (Luminous accent tone, interactive highlights, active state indicators)
+ * W3rise Studio - Design Tokens (Redesign v3)
+ * Warm editorial, product-grade restraint.
+ * System fonts only. No web fonts.
  */
 
+/* Color palette — warm editorial restraint */
 :root {
-  /* ==========================================================================
-     Core Brand Color Palette
-     ========================================================================== */
-  --color-chocopie: #432f2e;
-  --color-chocopie-rgb: 67, 47, 46;
+  /* Canvas — warm ivory paper, the whole page */
+  --canvas: #F5F3ED;
+  --canvas-rgb: 245, 243, 237;
 
-  --color-blue: #c4dae8;
-  --color-blue-rgb: 196, 218, 232;
+  /* Ink — text and darkest rules */
+  --ink: #1D1C19;
+  --ink-rgb: 29, 28, 25;
 
-  --color-butter: #feefb8;
-  --color-butter-rgb: 254, 239, 184;
+  /* Muted ink — secondary copy */
+  --muted-ink: #6B6862;
+  --muted-ink-rgb: 107, 104, 98;
 
-  /* Neutrals & Contrast Complements */
-  --color-white: #ffffff;
-  --color-offwhite: #faf8f5;
-  --color-cream: #f4eee3;
-  --color-dark-deep: #221616;
+  /* Rule — hairline separators. Two per page, no more */
+  --rule: #E2DDD2;
+  --rule-rgb: 226, 221, 210;
 
-  /* ==========================================================================
-     Semantic Hierarchy Tokens
-     ========================================================================== */
-  /* Surfaces & Grounds */
-  --surface-ground: var(--color-chocopie);
-  --surface-ground-deep: var(--color-dark-deep);
-  --surface-canvas: var(--color-blue);
-  --surface-canvas-subtle: rgba(var(--color-blue-rgb), 0.16);
-  --surface-canvas-hover: rgba(var(--color-blue-rgb), 0.28);
-  --surface-card: #ffffff;
-  --surface-card-translucent: rgba(255, 255, 255, 0.85);
+  /* Accent — terracotta. Maximum three uses per page */
+  --accent: #C05F3C;
+  --accent-rgb: 192, 95, 60;
 
-  /* Typography Roles */
-  --text-primary-on-light: var(--color-chocopie);
-  --text-secondary-on-light: rgba(var(--color-chocopie-rgb), 0.72);
-  --text-tertiary-on-light: rgba(var(--color-chocopie-rgb), 0.48);
-
-  --text-primary-on-dark: #fcfbfa;
-  --text-secondary-on-dark: rgba(var(--color-blue-rgb), 0.88);
-  --text-tertiary-on-dark: rgba(var(--color-blue-rgb), 0.60);
-
-  /* Accents & States */
-  --accent-luminous: var(--color-butter);
-  --accent-luminous-rgb: var(--color-butter-rgb);
-  --accent-luminous-glow: rgba(var(--color-butter-rgb), 0.4);
-  --accent-luminous-subtle: rgba(var(--color-butter-rgb), 0.2);
-
-  /* Borders & Dividers */
-  --border-editorial: rgba(var(--color-chocopie-rgb), 0.14);
-  --border-editorial-subtle: rgba(var(--color-chocopie-rgb), 0.08);
-  --border-on-dark: rgba(var(--color-blue-rgb), 0.22);
-  --border-accent: rgba(var(--color-butter-rgb), 0.6);
-
-  /* ==========================================================================
-     Typography Stack & Scales
-     ========================================================================== */
-  --font-display: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-
-  /* Fluid Type Scale (Mobile-First via clamp) */
-  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
-  --font-size-sm: clamp(0.875rem, 0.825rem + 0.25vw, 0.9375rem);
-  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
-  --font-size-md: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
-  --font-size-lg: clamp(1.35rem, 1.2rem + 0.75vw, 1.625rem);
-  --font-size-xl: clamp(1.75rem, 1.5rem + 1.2vw, 2.25rem);
-  --font-size-2xl: clamp(2.25rem, 1.85rem + 2vw, 3.25rem);
-  --font-size-3xl: clamp(2.85rem, 2.2rem + 3.2vw, 4.5rem);
-  --font-size-hero: clamp(3.2rem, 2.4rem + 4.8vw, 6.25rem);
-
-  /* Line Heights */
-  --line-height-tight: 1.08;
-  --line-height-snug: 1.25;
-  --line-height-base: 1.6;
-  --line-height-relaxed: 1.75;
-
-  /* Letter Spacing */
-  --tracking-tighter: -0.04em;
-  --tracking-tight: -0.02em;
-  --tracking-normal: 0em;
-  --tracking-wide: 0.04em;
-  --tracking-widest: 0.12em;
-
-  /* Font Weights */
-  --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
-  --weight-extrabold: 800;
-
-  /* ==========================================================================
-     Layout, Spacing & Container Constraints
-     ========================================================================== */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
-  --space-32: 8rem;     /* 128px */
-
-  --container-max-width: 1400px;
-  --container-padding: clamp(1.25rem, 3.5vw, 3.5rem);
-  --section-padding-y: clamp(4rem, 8vw, 8rem);
-
-  /* Border Radii */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
-
-  /* Organic Chocopie & Butter Shadows */
-  --shadow-subtle: 0 2px 8px rgba(var(--color-chocopie-rgb), 0.05);
-  --shadow-card: 0 10px 30px -10px rgba(var(--color-chocopie-rgb), 0.08);
-  --shadow-elevated: 0 20px 40px -15px rgba(var(--color-chocopie-rgb), 0.16);
-  --shadow-butter-glow: 0 0 24px rgba(var(--color-butter-rgb), 0.45);
-  --shadow-butter-ring: 0 0 0 3px rgba(var(--color-butter-rgb), 0.55);
-
-  /* Transitions & Hardware-Accelerated Curves */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
-  --transition-fast: 160ms var(--ease-out-expo);
-  --transition-normal: 280ms var(--ease-out-expo);
-  --transition-slow: 480ms var(--ease-out-expo);
-
-  /* Z-Index Hierarchy */
-  --z-base: 1;
-  --z-nav: 100;
-  --z-dropdown: 200;
-  --z-modal-backdrop: 500;
-  --z-modal: 600;
-  --z-toast: 1000;
+  /* Band — single tinted band that marks the middle movement */
+  --band: #EFE9DD;
+  --band-rgb: 239, 233, 221;
 }
+
+/* Derived semantic tokens */
+:root {
+  /* Surfaces */
+  --surface-primary: var(--canvas);
+  --surface-secondary: #FFFFFF;
+  --surface-tertiary: var(--canvas);
+
+  /* Text */
+  --text-primary: var(--ink);
+  --text-secondary: var(--muted-ink);
+  --text-tertiary: var(--muted-ink);
+
+  /* Rules & borders */
+  --rule-hairline: var(--rule);
+  --border-light: var(--rule);
+
+  /* Accent — constrained to max 3 uses per page */
+  --accent-terracotta: var(--accent);
+}
+
+/* Typography — system fonts only */
+:root {
+  --font-display: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* Scale: nothing above 34px */
+  --font-size-headline: 34px;
+  --font-size-statement: 21px;
+  --font-size-body: 15px;
+  --font-size-small: 13px;
+  --font-size-label: 11px;
+
+  /* Line heights */
+  --line-height-tight: 1.05;
+  --line-height-relaxed: 1.6;
+}
+
+/* Layout */
+:root {
+  --container-max-width: 660px;
+  --section-spacing: 4rem; /* 4-5rem, space does the work borders and cards were doing */
+}

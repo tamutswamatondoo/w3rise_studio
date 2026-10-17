@@ -1,797 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#432f2e" />
-    <meta name="description" content="W3rise Studio — Where strategy, design, and code converge into complete digital mastery. Full-service branding, digital platforms, and software engineering." />
-    
-    <title>W3rise Studio | Where Strategy, Design &amp; Code Converge</title>
-    
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="site-wrapper">
-      
-      <!-- ====================================================================
-           1. Site Header & Navigation
-           Fixed translucent Chocopie (#432f2e) backdrop, Blue (#c4dae8) links, 
-           Butter (#feefb8) hover highlights, and Project Initiation CTA pill.
-           ==================================================================== -->
-      <header class="site-header" role="banner">
-        <div class="container nav-container">
-          <!-- Brand Logo -->
-          <a href="#" class="brand-link" aria-label="W3rise Studio Homepage">
-            <img src="/assets/logo.svg" alt="W3rise Studio" class="brand-logo-img" width="160" height="40" />
-          </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W3rise Studio — Full-Service Digital Agency</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-          <!-- Desktop Navigation -->
-          <nav class="nav-menu-wrapper" aria-label="Primary Navigation">
-            <ul class="nav-menu">
-              <li><a href="#services" class="nav-link">Capabilities</a></li>
-              <li><a href="#works" class="nav-link">Selected Works</a></li>
-              <li><a href="#approach" class="nav-link">Approach</a></li>
-              <li><a href="#studio" class="nav-link">Studio</a></li>
-            </ul>
-          </nav>
-
-          <!-- Header Action & Mobile Toggle -->
-          <div class="nav-actions">
-            <a href="#contact" class="nav-cta-pill">
-              <span class="cta-indicator" aria-hidden="true"></span>
-              <span>Initiate Project</span>
-            </a>
-
-            <!-- Accessible Mobile Hamburger -->
-            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
-              <svg class="mobile-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 6h18M3 12h18M3 18h18" />
-              </svg>
-            </button>
-          </div>
+  <!-- Nav -->
+  <nav class="site-nav" aria-label="Main navigation" aria-current="false">
+    <div class="container">
+      <div class="flex-between">
+        <div class="brand">
+          <span class="brand-copy">w3rise</span>
+          <svg class="brand-logo" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="12" height="12" rx="1"/>
+          </svg>
         </div>
-
-        <!-- Mobile Drawer Navigation Overlay -->
-        <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
-          <ul class="mobile-nav-list">
-            <li><a href="#services" class="mobile-nav-link">01. Capabilities</a></li>
-            <li><a href="#works" class="mobile-nav-link">02. Selected Works</a></li>
-            <li><a href="#approach" class="mobile-nav-link">03. Approach</a></li>
-            <li><a href="#studio" class="mobile-nav-link">04. Studio</a></li>
-          </ul>
-
-          <div style="padding-top: var(--space-8); border-top: 1px solid rgba(var(--color-blue-rgb), 0.15);">
-            <a href="#contact" class="nav-cta-pill" style="display: flex; justify-content: center; width: 100%; padding: 0.85rem;">
-              <span class="cta-indicator" aria-hidden="true"></span>
-              <span>Initiate Project</span>
-            </a>
-            <p class="font-mono text-caption" style="color: rgba(var(--color-blue-rgb), 0.6); text-align: center; margin-top: var(--space-4);">
-              hello@w3rise.studio • Worldwide
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <!-- ====================================================================
-           2. Hero Section
-           Deep Chocopie (#432f2e) ground, organic atmospheric Blue (#c4dae8) canvas layer,
-           editorial headline, Butter (#feefb8) interactive highlights, and capability strip.
-           ==================================================================== -->
-      <section class="hero-section" aria-labelledby="hero-title">
-        
-        <!-- Natural Atmospheric Lighting Canvas (No Harsh Mixing) -->
-        <div class="hero-ambient-layer" aria-hidden="true">
-          <div class="ambient-orb-blue"></div>
-          <div class="ambient-orb-butter"></div>
-          <div class="hero-grid-pattern"></div>
-        </div>
-
-        <div class="container hero-container">
-          
-          <!-- Live Studio Availability Status -->
-          <div class="hero-status-wrap">
-            <div class="hero-status-pill">
-              <span class="hero-status-dot" aria-hidden="true"></span>
-              <span>Full-Service Digital Atelier • Booking Q1/Q2</span>
-            </div>
-          </div>
-
-          <!-- Editorial Display Headline -->
-          <h1 id="hero-title" class="hero-headline">
-            Where strategy, design, and code converge into 
-            <span class="hero-headline-highlight">complete digital mastery.</span>
-          </h1>
-
-          <!-- Supporting Brand Versatility Copy -->
-          <p class="hero-description">
-            W3rise Studio architects high-impact brand identities, bespoke digital ecosystems, and high-performance web platforms for visionary teams. We eliminate the boundaries between aesthetic finesse and architectural rigor — executing every dimension of modern digital presence with absolute precision.
-          </p>
-
-          <!-- Interactive Action Buttons -->
-          <div class="hero-actions">
-            <!-- Primary Butter Action with Hover Elevation & Arrow Shift -->
-            <a href="#contact" class="btn-hero-primary">
-              <span>Initiate Collaboration</span>
-              <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3.75 9H14.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9.75 4.5L14.25 9L9.75 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-
-            <!-- Secondary Outlined Blue Exploration Button -->
-            <a href="#works" class="btn-hero-secondary">
-              <span>Explore Selected Works</span>
-            </a>
-          </div>
-
-          <!-- Multi-Disciplinary Capability Micro-Strip ("We Do It All") -->
-          <div class="hero-capabilities" aria-label="Studio Capabilities Overview">
-            <span class="hero-capabilities-label">Multi-Disciplinary Disciplines</span>
-            <div class="hero-capabilities-grid">
-              
-              <div class="capability-card">
-                <div class="capability-number">01 / BRAND</div>
-                <div class="capability-title">Brand Identity</div>
-                <div class="capability-desc">Visual systems, strategy &amp; verbal identity</div>
-              </div>
-
-              <div class="capability-card">
-                <div class="capability-number">02 / CRAFT</div>
-                <div class="capability-title">Full-Stack Craft</div>
-                <div class="capability-desc">Scalable platforms, cloud &amp; API architecture</div>
-              </div>
-
-              <div class="capability-card">
-                <div class="capability-number">03 / DIRECTION</div>
-                <div class="capability-title">Creative Direction</div>
-                <div class="capability-desc">Art direction, editorial storytelling &amp; motion</div>
-              </div>
-
-              <div class="capability-card">
-                <div class="capability-number">04 / INTERACTIVE</div>
-                <div class="capability-title">Interactive Labs</div>
-                <div class="capability-desc">Immersive 3D, micro-interactions &amp; WebGL</div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Main Content Area -->
-      <main id="main-content">
-        <!-- ====================================================================
-             3. Featured Works / Multi-Disciplinary Grid
-             Responsive masonry grid with interactive filter pills:
-             (All, Branding, Digital Experience, Strategy, Engineering)
-             ==================================================================== -->
-        <section id="works" class="works-section" aria-labelledby="works-heading">
-          <div class="container">
-            
-            <!-- Section Header -->
-            <div class="works-header-panel">
-              <div class="works-header-top">
-                <span class="eyebrow eyebrow-accent">Selected Works • 2025–2026</span>
-                <h2 id="works-heading" class="works-title">
-                  Architected for distinction. Engineered for dominance.
-                </h2>
-                <p class="works-lead">
-                  From global brand identity systems to high-throughput software architectures, explore how we converge strategy, bespoke design, and code into complete digital mastery.
-                </p>
-              </div>
-
-              <!-- Interactive Category Filter Navigation -->
-              <div class="works-filter-nav" role="toolbar" aria-label="Project category filters">
-                <button type="button" class="filter-pill active" data-filter="all" aria-pressed="true">
-                  <span>All Disciplines</span>
-                  <span class="filter-count">6</span>
-                </button>
-                <button type="button" class="filter-pill" data-filter="branding" aria-pressed="false">
-                  <span>Branding</span>
-                  <span class="filter-count">3</span>
-                </button>
-                <button type="button" class="filter-pill" data-filter="digital-experience" aria-pressed="false">
-                  <span>Digital Experience</span>
-                  <span class="filter-count">4</span>
-                </button>
-                <button type="button" class="filter-pill" data-filter="strategy" aria-pressed="false">
-                  <span>Strategy</span>
-                  <span class="filter-count">2</span>
-                </button>
-                <button type="button" class="filter-pill" data-filter="engineering" aria-pressed="false">
-                  <span>Engineering</span>
-                  <span class="filter-count">3</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Responsive Masonry Grid -->
-            <div class="works-grid" id="works-grid-container">
-              
-              <!-- Project 1: Kronos Horology -->
-              <article class="works-item" data-category="branding digital-experience" aria-label="Kronos Horology Project">
-                <div class="work-media-box">
-                  <span class="work-badge-pill">Branding &amp; 3D WebGL</span>
-                  <img src="/assets/works/kronos.svg" alt="Kronos Horology 3D Timepiece Configurator" class="work-media-art" loading="lazy" />
-                </div>
-                <div class="work-info-box">
-                  <div class="work-client-eyebrow">Haute Horlogerie • Geneva</div>
-                  <div class="work-header-row">
-                    <h3 class="work-title">Kronos Spatial Timepiece Atelier</h3>
-                    <div class="work-arrow-circle" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p class="work-description">
-                    Complete brand repositioning and custom WebGL 3D luxury configurator enabling real-time bespoke horology assembly with sub-30ms interaction feedback.
-                  </p>
-                  <div class="work-tags">
-                    <span class="work-tag">Brand Identity</span>
-                    <span class="work-tag">WebGL Shaders</span>
-                    <span class="work-tag">Design System</span>
-                    <span class="work-tag">Luxury E-Commerce</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Project 2: Aura Autonomous OS -->
-              <article class="works-item" data-category="engineering digital-experience" aria-label="Aura Autonomous OS Project">
-                <div class="work-media-box">
-                  <span class="work-badge-pill">Engineering &amp; Telemetry</span>
-                  <img src="/assets/works/aura.svg" alt="Aura OS Real-time Telemetry Platform" class="work-media-art" loading="lazy" />
-                </div>
-                <div class="work-info-box">
-                  <div class="work-client-eyebrow">Robotics &amp; Mobility • Munich</div>
-                  <div class="work-header-row">
-                    <h3 class="work-title">Aura Autonomous Telemetry Hub</h3>
-                    <div class="work-arrow-circle" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p class="work-description">
-                    High-throughput spatial dashboard rendering 250,000 live telemetry nodes per second via micro-frontends and binary WebSocket streams.
-                  </p>
-                  <div class="work-tags">
-                    <span class="work-tag">Distributed Systems</span>
-                    <span class="work-tag">Micro-Frontends</span>
-                    <span class="work-tag">Spatial UI</span>
-                    <span class="work-tag">Real-Time WebSockets</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Project 3: Nexus Global Capital -->
-              <article class="works-item" data-category="strategy engineering" aria-label="Nexus Global Capital Project">
-                <div class="work-media-box">
-                  <span class="work-badge-pill">Strategy &amp; FinTech</span>
-                  <img src="/assets/works/nexus.svg" alt="Nexus Global Algorithmic Portfolio Terminal" class="work-media-art" loading="lazy" />
-                </div>
-                <div class="work-info-box">
-                  <div class="work-client-eyebrow">Institutional Asset Management • New York</div>
-                  <div class="work-header-row">
-                    <h3 class="work-title">Nexus Quantitative Wealth Terminal</h3>
-                    <div class="work-arrow-circle" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p class="work-description">
-                    Full enterprise brand transformation paired with high-concurrency algorithmic asset allocation dashboards handling $4.2B in multi-market liquidity.
-                  </p>
-                  <div class="work-tags">
-                    <span class="work-tag">Brand Strategy</span>
-                    <span class="work-tag">Quantitative UI</span>
-                    <span class="work-tag">Cloud Infrastructure</span>
-                    <span class="work-tag">Zero-Trust Security</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Project 4: Solaris Kinetic Pavilion -->
-              <article class="works-item" data-category="branding digital-experience" aria-label="Solaris Kinetic Pavilion Project">
-                <div class="work-media-box">
-                  <span class="work-badge-pill">Immersive Spatial &amp; Identity</span>
-                  <img src="/assets/works/solaris.svg" alt="Solaris Kinetic Pavilion Generative Platform" class="work-media-art" loading="lazy" />
-                </div>
-                <div class="work-info-box">
-                  <div class="work-client-eyebrow">Biennale Architecture • Venice</div>
-                  <div class="work-header-row">
-                    <h3 class="work-title">Solaris Kinetic Spatial Pavilion</h3>
-                    <div class="work-arrow-circle" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p class="work-description">
-                    An architectural visual identity that manifests physically and digitally through live parametric shaders modulated by ambient sunlight telemetry.
-                  </p>
-                  <div class="work-tags">
-                    <span class="work-tag">Generative Visuals</span>
-                    <span class="work-tag">Creative Direction</span>
-                    <span class="work-tag">Interactive Audio-Visual</span>
-                    <span class="work-tag">GLSL Shaders</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Project 5: Synapse AI Developer Platform -->
-              <article class="works-item" data-category="engineering strategy" aria-label="Synapse AI Platform Project">
-                <div class="work-media-box">
-                  <span class="work-badge-pill">Developer Platform &amp; API</span>
-                  <img src="/assets/works/synapse.svg" alt="Synapse AI Platform Documentation and Console" class="work-media-art" loading="lazy" />
-                </div>
-                <div class="work-info-box">
-                  <div class="work-client-eyebrow">Frontier Intelligence • San Francisco</div>
-                  <div class="work-header-row">
-                    <h3 class="work-title">Synapse AI Developer Infrastructure</h3>
-                    <div class="work-arrow-circle" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p class="work-description">
-                    Developer portal, high-speed documentation engine, and interactive testing console for LLM inference networks with sub-50ms TTFT guarantees.
-                  </p>
-                  <div class="work-tags">
-                    <span class="work-tag">Developer Experience</span>
-                    <span class="work-tag">API Design</span>
-                    <span class="work-tag">Design System</span>
-                    <span class="work-tag">Edge Infrastructure</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Project 6: Valence Haute Couture -->
-              <article class="works-item" data-category="branding digital-experience" aria-label="Valence Haute Couture Project">
-                <div class="work-media-box">
-                  <span class="work-badge-pill">Editorial Commerce &amp; Motion</span>
-                  <img src="/assets/works/valence.svg" alt="Valence Luxury Digital Runway Flagship" class="work-media-art" loading="lazy" />
-                </div>
-                <div class="work-info-box">
-                  <div class="work-client-eyebrow">Luxury Fashion • Paris</div>
-                  <div class="work-header-row">
-                    <h3 class="work-title">Valence Digital Runway &amp; Atelier</h3>
-                    <div class="work-arrow-circle" aria-hidden="true">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p class="work-description">
-                    Minimalist typographic universe paired with buttery micro-interactions, editorial lookbooks, and a headless commerce architecture achieving 100/100 Core Web Vitals.
-                  </p>
-                  <div class="work-tags">
-                    <span class="work-tag">Headless Commerce</span>
-                    <span class="work-tag">Editorial Direction</span>
-                    <span class="work-tag">Micro-Interactions</span>
-                    <span class="work-tag">Web Performance</span>
-                  </div>
-                </div>
-              </article>
-
-            </div>
-          </div>
-        </section>
-
-        <!-- ====================================================================
-             4. Core Services Section
-             Interactive modular cards detailing end-to-end capabilities:
-             (Brand Identity, Full-Stack Craft, Creative Direction, Interactive Experiences)
-             ==================================================================== -->
-        <section id="services" class="services-section section" aria-labelledby="services-heading">
-          
-          <!-- Natural Atmospheric Ambient Layer -->
-          <div class="services-ambient-canvas" aria-hidden="true">
-            <div class="services-orb-blue"></div>
-            <div class="services-orb-butter"></div>
-          </div>
-
-          <div class="container services-container">
-            
-            <!-- Section Editorial Header -->
-            <div class="services-header">
-              <span class="eyebrow eyebrow-accent">Full-Spectrum Capabilities • End-to-End Delivery</span>
-              <h2 id="services-heading" class="services-title">
-                Complete digital mastery across four defining pillars.
-              </h2>
-              <p class="services-lead">
-                We reject the artificial separation between brand strategy, high-concept aesthetics, and deep software engineering. W3rise Studio operates as an integrated creative and technical engine — taking enterprises from zero to market leadership.
-              </p>
-            </div>
-
-            <!-- Modular Interactive Cards Grid -->
-            <div class="services-grid">
-              
-              <!-- Service 1: Brand Identity -->
-              <div class="service-card" aria-label="Brand Identity and Strategy Capability">
-                <div>
-                  <div class="service-card-top">
-                    <span class="service-badge">01 / IDENTITY</span>
-                    <div class="service-icon-wrap" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 7V17M7 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="12" cy="12" r="3" fill="var(--color-butter)"/>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <h3 class="service-heading">Brand Architecture &amp; Identity Systems</h3>
-                  <p class="service-narrative">
-                    We engineer indelible visual signatures, market positioning frameworks, and cohesive typographic systems that command authority across digital and physical touchpoints.
-                  </p>
-
-                  <ul class="service-deliverables">
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Strategic Positioning &amp; Verbal Narrative</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Bespoke Typographic Systems &amp; Logomarks</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Scalable Design Tokens &amp; Component Guidelines</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Editorial Packaging &amp; Spatial Signage Systems</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="service-card-bottom">
-                  <div class="service-outcome-pill">
-                    <span>Outcome:</span>
-                    <strong>Unmistakable Market Authority</strong>
-                  </div>
-                  <a href="#contact" class="service-inquire-link">
-                    <span>Inquire Identity</span>
-                    <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Service 2: Full-Stack Craft -->
-              <div class="service-card" aria-label="Full-Stack Engineering Capability">
-                <div>
-                  <div class="service-card-top">
-                    <span class="service-badge">02 / CRAFT</span>
-                    <div class="service-icon-wrap" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M14 4L10 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <h3 class="service-heading">Full-Stack Software Engineering</h3>
-                  <p class="service-narrative">
-                    Resilient, zero-compromise engineering built for enterprise scale. We construct modern micro-frontends, high-throughput streaming pipelines, and serverless edge backends with sub-50ms latency guarantees.
-                  </p>
-
-                  <ul class="service-deliverables">
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>High-Performance Frontend Systems (Vite, React, SSR)</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Distributed Cloud Infrastructure &amp; Edge APIs</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Real-Time WebSockets &amp; Event-Driven Architecture</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Zero-Trust Security &amp; 100/100 Core Web Vitals</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="service-card-bottom">
-                  <div class="service-outcome-pill">
-                    <span>Outcome:</span>
-                    <strong>Sub-50ms Latency &amp; Infinite Scale</strong>
-                  </div>
-                  <a href="#contact" class="service-inquire-link">
-                    <span>Inquire Craft</span>
-                    <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Service 3: Creative Direction -->
-              <div class="service-card" aria-label="Creative Direction Capability">
-                <div>
-                  <div class="service-card-top">
-                    <span class="service-badge">03 / DIRECTION</span>
-                    <div class="service-icon-wrap" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <h3 class="service-heading">Creative &amp; Editorial Direction</h3>
-                  <p class="service-narrative">
-                    Elevating enterprise brands into compelling cultural icons. We direct bespoke visual campaigns, editorial digital showrooms, and kinetic typography systems designed for high-conversion prestige.
-                  </p>
-
-                  <ul class="service-deliverables">
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Editorial Concepts &amp; Interactive Storytelling</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Kinetic Typography &amp; Fluid Micro-Motion</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>3D CGI Visual Production &amp; Photorealistic Art</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Luxury Digital Flagships &amp; Lookbook Platforms</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="service-card-bottom">
-                  <div class="service-outcome-pill">
-                    <span>Outcome:</span>
-                    <strong>Unrivaled Visual Distinction</strong>
-                  </div>
-                  <a href="#contact" class="service-inquire-link">
-                    <span>Inquire Direction</span>
-                    <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Service 4: Interactive Experiences -->
-              <div class="service-card" aria-label="Interactive Experiences Capability">
-                <div>
-                  <div class="service-card-top">
-                    <span class="service-badge">04 / IMMERSION</span>
-                    <div class="service-icon-wrap" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="currentColor" stroke-width="2"/>
-                        <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <h3 class="service-heading">Interactive Experiences &amp; WebGL Labs</h3>
-                  <p class="service-narrative">
-                    Transcending conventional browser capabilities. We craft bespoke 3D spatial platforms, custom GLSL shader environments, and tactile interactions that evoke sensory wonder and engagement.
-                  </p>
-
-                  <ul class="service-deliverables">
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Custom Three.js &amp; WebGL 3D Environments</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>GLSL Shader Computation &amp; Generative Canvas</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Tactile Spatial Micro-Interactions &amp; Physics</span>
-                    </li>
-                    <li class="service-deliverable-item">
-                      <span class="service-check-bullet" aria-hidden="true">✓</span>
-                      <span>Real-Time 3D Product Customizers &amp; Showrooms</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="service-card-bottom">
-                  <div class="service-outcome-pill">
-                    <span>Outcome:</span>
-                    <strong>Bespoke Sensory Immersion</strong>
-                  </div>
-                  <a href="#contact" class="service-inquire-link">
-                    <span>Inquire Labs</span>
-                    <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Integrated Cross-Disciplinary Versatility Banner -->
-            <div class="services-versatility-banner">
-              <div class="versatility-content">
-                <span class="badge-butter" style="margin-bottom: var(--space-4);">We Do It All</span>
-                <h3 class="versatility-headline">
-                  Eliminate fragmented agencies. One unified creative and engineering standard.
-                </h3>
-                <p class="versatility-text">
-                  Managing separate branding firms, design contractors, and development agencies creates friction and diluted execution. W3rise Studio delivers as a single, multi-disciplinary partner.
-                </p>
-              </div>
-              <div class="versatility-actions">
-                <a href="#contact" class="btn-hero-primary" style="white-space: nowrap;">
-                  <span>Initiate Full-Service Project</span>
-                  <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" width="18" height="18" aria-hidden="true">
-                    <path d="M3.75 9H14.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9.75 4.5L14.25 9L9.75 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section>
-      </main>
-
-      <!-- ====================================================================
-           5. Sophisticated Chocopie (#432f2e) Footer
-           Grounding base with crisp light text, social links, and newsletter dispatch
-           ==================================================================== -->
-      <footer id="contact" class="site-footer" role="contentinfo">
-        
-        <!-- Natural Atmospheric Canvas Layer -->
-        <div class="footer-ambient-canvas" aria-hidden="true">
-          <div class="footer-orb-blue"></div>
-          <div class="footer-orb-butter"></div>
-        </div>
-
-        <div class="container footer-container">
-          
-          <!-- Main Editorial Footer Columns -->
-          <div class="footer-main-grid">
-            
-            <!-- Column 1: Brand Identity & Motto -->
-            <div class="footer-brand-col">
-              <a href="#" class="footer-logo-link" aria-label="W3rise Studio Top">
-                <img src="/assets/logo.svg" alt="W3rise Studio" width="160" height="40" style="filter: brightness(0) invert(1);" />
-              </a>
-
-              <p class="footer-motto">
-                Where strategy, design, and code converge into 
-                <span class="footer-motto-highlight">complete digital mastery.</span>
-              </p>
-
-              <div class="footer-meta-pill">
-                <span class="footer-meta-dot" aria-hidden="true"></span>
-                <span>Geneva • New York • Munich • Tokyo</span>
-              </div>
-
-              <div>
-                <a href="mailto:hello@w3rise.studio" class="footer-link" style="color: var(--color-butter); font-family: var(--font-mono); font-size: var(--font-size-sm);">
-                  <span>hello@w3rise.studio</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Column 2: Studio Navigation -->
-            <div>
-              <div class="footer-col-title">Studio</div>
-              <ul class="footer-links-list">
-                <li><a href="#services" class="footer-link">Capabilities</a></li>
-                <li><a href="#works" class="footer-link">Selected Works</a></li>
-                <li><a href="#services" class="footer-link">Approach</a></li>
-                <li><a href="#contact" class="footer-link">Initiate Project</a></li>
-                <li>
-                  <a href="#contact" class="footer-link">
-                    <span>Careers</span>
-                    <span class="badge-butter" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">Hiring</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 3: Disciplines -->
-            <div>
-              <div class="footer-col-title">Disciplines</div>
-              <ul class="footer-links-list">
-                <li><a href="#services" class="footer-link">Brand Architecture</a></li>
-                <li><a href="#services" class="footer-link">Full-Stack Craft</a></li>
-                <li><a href="#services" class="footer-link">Creative Direction</a></li>
-                <li><a href="#services" class="footer-link">WebGL &amp; 3D Labs</a></li>
-                <li><a href="#works" class="footer-link">Performance Audits</a></li>
-              </ul>
-            </div>
-
-            <!-- Column 4: Newsletter & Social Networks -->
-            <div class="footer-newsletter-col">
-              <div class="footer-col-title">Studio Dispatch</div>
-              <p class="footer-newsletter-desc">
-                Curated quarterly dispatches on design systems, spatial computing, and scalable software architecture.
-              </p>
-
-              <!-- Newsletter Form -->
-              <form id="newsletter-form" class="footer-newsletter-form" novalidate>
-                <div class="newsletter-input-wrap">
-                  <label for="newsletter-email" class="sr-only">Corporate email address</label>
-                  <input 
-                    type="email" 
-                    id="newsletter-email" 
-                    name="email" 
-                    class="newsletter-input" 
-                    placeholder="Enter corporate email..." 
-                    required 
-                    autocomplete="email"
-                  />
-                  <button type="submit" class="newsletter-submit-btn">
-                    <span>Join</span>
-                    <span aria-hidden="true">→</span>
-                  </button>
-                </div>
-                <div id="newsletter-feedback" class="newsletter-feedback" role="status" aria-live="polite"></div>
-              </form>
-
-              <!-- Social Links -->
-              <div style="margin-top: var(--space-6);">
-                <div class="footer-col-title" style="margin-bottom: var(--space-3); font-size: 0.7rem;">Connect</div>
-                <div style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
-                  <a href="https://github.com/tamutswamatondoo/w3rise_studio" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="GitHub Profile">
-                    <span>GitHub</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                  <a href="#" class="footer-link" aria-label="X Twitter Profile">
-                    <span>X (Twitter)</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                  <a href="#" class="footer-link" aria-label="LinkedIn Profile">
-                    <span>LinkedIn</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                  <a href="#" class="footer-link" aria-label="Are.na Channel">
-                    <span>Are.na</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <!-- Bottom Status & Copyright Bar -->
-          <div class="footer-bottom-bar">
-            <div class="footer-copyright">
-              © 2026 W3rise Studio. All rights reserved. Strict natural spatial hierarchy.
-            </div>
-
-            <div class="footer-status-indicator">
-              <span class="status-pulse-green" aria-hidden="true"></span>
-              <span>100% Green Cloud Hosted • Global Edge Delivery</span>
-            </div>
-
-            <div>
-              <button type="button" id="back-to-top-btn" class="btn-back-to-top" aria-label="Scroll back to top of page">
-                <span>Back to Top</span>
-                <span aria-hidden="true">↑</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </footer>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Studio</a></li>
+          <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
-</html>
+  <main id="main-content" class="site-wrapper">
+    <!-- Hero -->
+    <section class="hero-section" aria-labelledby="hero-headline">
+      <div class="container">
+        <div class="flex-between">
+          <span class="eyebrow">Studio</span>
+          <h1 id="hero-headline" class="headline">We design and build the whole thing</h1>
+        </div>
+        <p class="hero-line">We design and build the whole thing, end to end.</p>
+        <a href="mailto:hello@w3rise.studio" class="btn btn-primary">Start a project</a>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="statement-section" aria-labelledby="statement-title">
+      <div class="container">
+        <h2 id="statement-title" class="section-title">One team from the first conversation to launch. Nothing gets handed between departments, so the part you cared about is the part that survives.</h2>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="capabilities-section" aria-labelledby="capabilities-title">
+      <div class="container">
+        <h2 id="capabilities-title" class="section-title">What we do</h2>
+        <div class="capabilities-grid">
+          <div class="capability-row">
+            <span class="capability-discipline">Brand</span>
+            <p class="capability-description">Positioning and identity systems</p>
+          </div>
+          <div class="capability-row">
+            <span class="capability-discipline">Product</span>
+            <p class="capability-description">Research, interface, prototyping</p>
+          </div>
+          <div class="capability-row">
+            <span class="capability-discipline">Engineering</span>
+            <p class="capability-description">Platforms, APIs, infrastructure</p>
+          </div>
+          <div class="capability-row">
+            <span class="capability-discipline">Creative</span>
+            <p class="capability-description">Art direction, motion, 3D</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Close -->
+    <section class="close-section" aria-labelledby="close-title">
+      <div class="container">
+        <h2 id="close-title" class="section-title">Available now</h2>
+        <p class="availability">Two build slots open for Q1 2027</p>
+        <div class="contact-bar">
+          <a href="mailto:hello@w3rise.studio" class="btn btn-primary">hello@w3rise.studio</a>
+          <span class="pipe">|</span>
+          <a href="#contact" class="btn btn-secondary">Let's talk</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">W3rise Studio • Built with care • 2026</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
